@@ -3,84 +3,13 @@ from wtforms import Form, FloatField, SubmitField, validators, ValidationError
 import numpy as np
 import joblib
 from scipy import stats
-import sys
 import pandas as pd
 import numpy as np
-import glob
-import time
-import pickle
-import statistics
-import datetime
-from matplotlib import pyplot as plt
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.multioutput import MultiOutputClassifier
-from sklearn.model_selection import LeaveOneGroupOut
-from sklearn.model_selection import train_test_split
-from imblearn.over_sampling import SMOTE
-from sklearn.metrics import confusion_matrix
-from sklearn.metrics import classification_report
-from imblearn.over_sampling import SMOTE
-from sklearn.metrics import confusion_matrix
-from sklearn.metrics import classification_report
-from sklearn.metrics import accuracy_score
-from sklearn.metrics import precision_score
-from sklearn.metrics import recall_score
-from sklearn.metrics import f1_score
-from imblearn.under_sampling import RandomUnderSampler
-from sklearn.datasets import load_boston
-from sklearn.model_selection import train_test_split
-from sklearn.tree import DecisionTreeRegressor
-from sklearn.ensemble import AdaBoostRegressor
-from sklearn.ensemble import BaggingRegressor
-from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor
-import lightgbm as lgb
-from sklearn.metrics import confusion_matrix
-import seaborn as sns
-import matplotlib.pyplot as plt
-from scipy import stats
-import itertools
-import shap
 from statistics import mean
-
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.multioutput import MultiOutputClassifier
-from sklearn.model_selection import LeaveOneGroupOut
-from sklearn.model_selection import train_test_split
-from imblearn.over_sampling import SMOTE
-from sklearn import metrics
-from sklearn.metrics import confusion_matrix
-from sklearn.metrics import classification_report
-from imblearn.over_sampling import SMOTE
-from sklearn.metrics import confusion_matrix
-from sklearn.metrics import classification_report
-from sklearn.metrics import accuracy_score
-from sklearn.metrics import precision_score
-from sklearn.metrics import recall_score
-from sklearn.metrics import f1_score
-from imblearn.under_sampling import RandomUnderSampler
-from sklearn.datasets import load_boston
-from sklearn.model_selection import train_test_split
-from sklearn.tree import DecisionTreeRegressor
-from sklearn.ensemble import AdaBoostRegressor
-from sklearn.ensemble import BaggingRegressor
-from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor
-from sklearn.model_selection import BaseCrossValidator
-from imblearn.under_sampling import RandomUnderSampler
-from sklearn.model_selection import StratifiedKFold
-from sklearn.model_selection import StratifiedShuffleSplit
-from sklearn.metrics import roc_auc_score
-import csv
-
-import matplotlib.pyplot as plt
-from sklearn.decomposition import PCA
-from sklearn.manifold import TSNE
-
-import optuna
-from sklearn.model_selection import cross_val_score
+import datetime
 from functools import partial
 from flask_socketio import SocketIO, emit
 
-import collections
 
 app = Flask(__name__) # Flask動かす時のおまじない。動けばいいわ。
 app.config.from_object(__name__)
