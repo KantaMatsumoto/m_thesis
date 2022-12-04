@@ -431,3 +431,13 @@ for ID in range(1,6):
             pickle.dump(LP2,f)
             f.close()
 
+
+
+            <p style="text-align: center;">
+               ID{{ id }}<br>
+               入眠時間 {{ sleepHourStart }}時 {{ sleepMinStart }}分（24時間表記）<br>            
+               起床時間 {{ sleepHourEnd }}時 {{ sleepMinEnd }}分（24時間表記）<br>
+            </p>
+
+            id=id,
+                sleepHourStart=sleepHourStart,sleepMinStart=sleepMinStart,sleepHourEnd=sleepHourEnd,sleepMinEnd=sleepMinEnd

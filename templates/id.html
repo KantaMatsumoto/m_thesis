@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>Stress Predict App Result</title>
+    <style>
+        #wrapper {
+        text-align: center;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+    <div id="wrapper">
+        {% for message in idForm.id.errors %}
+        <div>{{ message }}</div>
+        {% endfor %}
+        {% for message in idForm.sleepHourStart.errors %}
+        <div>{{ message }}</div>
+        {% endfor %}
+        {% for message in idForm.sleepMinStart.errors %}
+        <div>{{ message }}</div>
+        {% endfor %}
+        {% for message in idForm.sleepHourEnd.errors %}
+        <div>{{ message }}</div>
+        {% endfor %}
+        {% for message in idForm.sleepHourEnd.errors %}
+        <div>{{ message }}</div>
+        {% endfor %}
+        {% for message in idForm.accept.errors %}
+        <div>{{ message }}</div>
+        {% endfor %}
+
+        <form action="/" method="POST">
+        <p style="text-align: center;">
+            IDを入力してください{{ idForm.id }}<br>
+            入眠時間 {{ idForm.sleepHourStart }}時 {{ idForm.sleepMinStart }}分（24時間表記）<br>            
+            起床時間 {{ idForm.sleepHourEnd }}時 {{ idForm.sleepMinEnd }}分（24時間表記）<br>
+            IDと入眠起床時間はこれでいいですか？{{ idForm.accept }}
+        </p>
+        {{ idForm.submitID }}
+        </form>
+
+        <table align="center" border="1" >
+            <tr><th>行動の種類</th><th>過去の行動時間</th><th>今後の行動時間</th></tr>
+            <tr><td> 睡眠 </td><td> 睡眠0時間 </td><td></td></tr>
+            <tr><td> 外出 </td><td> 外出4時間 </td><td></td></tr>
+            <tr><td> 料理 </td><td> 料理1時間 </td><td></td></tr>
+            <tr><td> 食事 </td><td> 食事2時間 </td><td></td></tr>
+            <tr><td> 入浴 </td><td> 入浴1時間 </td><td></td></tr>
+            <tr><td> その他 </td><td> その他4時間 </td><td></td></tr>
+            <tr><td></td><td colspan="2">この予定は</td></tr>
+        </table>
+    </div>

@@ -31,23 +31,24 @@
             <div>{{ message }}</div>
          {% endfor %}
 
-         <form method="post">
+         <p style="text-align: center;">
+            ID{{ idDay }}<br>
+            入眠時間 {{ sleepHourStart }}時 {{ sleepMinStart }}分（24時間表記）<br>            
+            起床時間 {{ sleepHourEnd }}時 {{ sleepMinEnd }}分（24時間表記）<br>
+         </p>
+
+         <form action="result" method="POST">
             <table align="center" border="1" >
                <tr><th>行動の種類</th><th>過去の行動時間</th><th>今後の行動時間</th></tr>
-               <tr><td>{{ form.goingoutLength.label }}</td><td>外出4時間</td><td>{{ form.goingoutLength }}</td></tr>
-               <tr><td>{{ form.cookingLength.label }}</td><td>料理1時間</td><td>{{ form.cookingLength }}</td></tr>
-               <tr><td>{{ form.eatingLength.label }}</td><td>食事2時間</td><td>{{ form.eatingLength }}</td></tr>
-               <tr><td>{{ form.bathingLength.label }}</td><td>入浴1時間</td><td>{{ form.bathingLength }}</td></tr>
-               <tr><td>{{ form.sleepingLength.label }}</td><td>睡眠0時間</td><td>{{ form.sleepingLength }}</td></tr>
-               <tr><td>{{ form.otherLength.label }}</td><td>その他4時間</td><td>{{ form.otherLength }}</td></tr>
-               <tr>
-                  <td>
-                  </td>
-                  <td colspan="2">これは  です</td>
-               </tr>
+               <tr><td> 睡眠 </td><td>外出4時間</td><td>{{ form.goingoutLength }}時間 </td></tr>
+               <tr><td> 外出 </td><td>料理1時間</td><td>{{ form.cookingLength }}時間 </td></tr>
+               <tr><td>料理</td><td>食事2時間</td><td>{{ form.eatingLength }}時間 </td></tr>
+               <tr><td>食事</td><td>入浴1時間</td><td>{{ form.bathingLength }}時間 </td></tr>
+               <tr><td>睡眠</td><td>睡眠0時間</td><td>{{ form.sleepingLength }}時間 </td></tr>
+               <tr><td>その他</td><td>その他4時間</td><td>{{ form.otherLength }}時間 </td></tr>
+               <tr><td></td><td colspan="2">この予定は</td></tr>
             </table>
             <br>
             {{ form.submit }}
-
          </form>
       </div>

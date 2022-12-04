@@ -1,5 +1,7 @@
-from flask import Flask, render_template, request, flash
-from wtforms import Form, FloatField, SubmitField, validators, ValidationError
+from flask import Flask, render_template, request, flash, session, escape, redirect, url_for
+from wtforms import (
+    Form, BooleanField, IntegerField, PasswordField, StringField,
+    SubmitField, TextAreaField, validators, ValidationError, FloatField)
 import numpy as np
 import joblib
 from scipy import stats
@@ -7,14 +9,13 @@ import pandas as pd
 import numpy as np
 from statistics import mean
 import datetime
-from functools import partial
-from flask_socketio import SocketIO, emit
+from flask_sqlalchemy import SQLAlchemy
 
-
-app = Flask(__name__) # Flask動かす時のおまじない。動けばいいわ。
+app = Flask(__name__, static_folder='./templates/image') # Flask動かす時のおまじない。
 app.config.from_object(__name__)
 app.config['SECRET_KEY'] = 'zJe09C5c3tMf5FnNL09C5d6SAzZoY'
-socketio = SocketIO(app, async_mode=None) # async_modeとかよくわからん。動けばいいわ。まぁおいおい調べるわ。
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
+db = SQLAlchemy(app)
 
 features = ['RRiM','RRiS','LP_all',
 'LP_Bathing', 'LP_Cooking', 'LP_Eating', 'LP_Goingout', 'LP_Sleeping', 'LP_Other',
@@ -24,7 +25,16 @@ features = ['RRiM','RRiS','LP_all',
 'Bathing_LPSAprefer_LP', 'Cooking_LPSAprefer_LP', 'Eating_LPSAprefer_LP', 'Goingout_LPSAprefer_LP','Sleeping_LPSAprefer_LP', 'Other_LPSAprefer_LP', 
 'Bathing_LPSAprefer_SA', 'Cooking_LPSAprefer_SA', 'Eating_LPSAprefer_SA', 'Goingout_LPSAprefer_SA','Sleeping_LPSAprefer_SA', 'Other_LPSAprefer_SA',
 #'Bathing_LPSAprefer_LP_SA', 'Cooking_LPSAprefer_P_SA', 'Eating_LPSAprefer_LP_SA', 'Goingout_LPSAprefer_LP_SA','Sleeping_LPSAprefer_LP_SA', 'Other_LPSAprefer_LP_SA',
-]                
+]      
+
+class data(db.Model):
+    #テーブルnameの設定,dataというnameに設定
+    __tablename__ = "data"
+    idDay = db.Column(db.String(20), primary_key=True, nullable=False)
+    sleepHourStart = db.Column(db.String(5), nullable=False)
+    sleepMinStart = db.Column(db.String(5), nullable=False)
+    sleepHourEnd = db.Column(db.String(5), nullable=False)
+    sleepMinEnd = db.Column(db.String(5), nullable=False)
 
 
 def saveFile(Time,xTest, pred, turn):#fileにdataframeを保存する用
@@ -40,7 +50,6 @@ def saveFile(Time,xTest, pred, turn):#fileにdataframeを保存する用
         f = open('result/' + 'ID' + str(ID) + 'SEX' + str(SEX) + 'TURN' + str(turn) + 'DATE' + str(dtNow.year) + str(dtNow.month)  +  str(dtNow.day) + '.csv', 'w')
         df.to_csv('result/' + 'ID' + str(ID) + 'SEX' + str(SEX) + 'TURN' + str(turn) + 'DATE' + str(dtNow.year) + str(dtNow.month)  +  str(dtNow.day) + '.csv')
         f.close()
-
 
 def makePrefer():#mixed_indicatorの設定（定数）
     lpPrefer = pd.DataFrame(
@@ -59,7 +68,6 @@ def makePrefer():#mixed_indicatorの設定（定数）
     )
     lpPrefer = lpPrefer.set_index('Name')
     lpPreferCol=lpPrefer.columns
-
     saPrefer = pd.DataFrame(
         {
             "Name": [
@@ -81,7 +89,6 @@ def makePrefer():#mixed_indicatorの設定（定数）
     lpsaPreferCol = lpsaPrefer.columns
     return lpsaPrefer
 
-
 def defineLP():#LPの予測の際に対数を代入
         #'LP_all','LP_Bathing', 'LP_Cooking', 'LP_Eating', 'LP_Goingout', 'LP_Sleeping', 'LP_Other'
         lp = [1931.181986,1528.488601,1822.615563,1974.988845,1294.652644,2672.004235]
@@ -98,7 +105,7 @@ def deleteFeatures(features):#不必要なものがあれば削除するため�
 #                                 'Bathing_LPSAprefer_LP', 'Cooking_LPSAprefer_LP', 'Eating_LPSAprefer_LP', 'Goingout_LPSAprefer_LP','Sleeping_LPSAprefer_LP', 'Other_LPSAprefer_LP', 
 #                                 'Bathing_LPSAprefer_SA', 'Cooking_LPSAprefer_SA', 'Eating_LPSAprefer_SA', 'Goingout_LPSAprefer_SA','Sleeping_LPSAprefer_SA', 'Other_LPSAprefer_SA',
 #                                 'Bathing_LPSAprefer_LP_SA', 'Cooking_LPSAprefer_P_SA', 'Eating_LPSAprefer_LP_SA', 'Goingout_LPSAprefer_LP_SA','Sleeping_LPSAprefer_LP_SA', 'Other_LPSAprefer_LP_SA',
-]                
+] 
 
 def makeFeatures(sa):#予測用の値を生成
     lpTemplate, lpAll = defineLP()
@@ -141,99 +148,159 @@ def predictStress(parameters):# ニューラルネットワークのモデルを
 def stressStatus(label):
     #print(label)
     if label == 1:
-        return "体調は悪くなるでしょう"
+        return "体調が悪くなるでしょう"
     elif label == 2: 
-        return "体調は維持されるでしょう"
+        return "体調が維持されるでしょう"
     elif label == 3: 
-        return "体調は良くなるでしょう"
+        return "体調が良くなるでしょう"
     else: 
         return "Error"
 
-# 公式サイト
-# http://wtforms.simplecodes.com/docs/0.6/fields.html
-# Flaskとwtformsを使い、index.html側で表示させるフォームを構築します。
-class activityForm(Form):
-    goingoutLength = FloatField("外出時間",
-                    [validators.InputRequired("この項目は入力必須です"),
-                    validators.NumberRange(min=0, max=10)])
+def getForm():
+    goingoutLength = float(request.form["goingoutLength"])                       
+    cookingLength  = float(request.form["cookingLength"])
+    eatingLength = float(request.form["eatingLength"])            
+    bathingLength  = float(request.form["bathingLength"])            
+    sleepingLength = float(request.form["sleepingLength"])            
+    otherLength  = float(request.form["otherLength"])
+    timeToCount = 60*4
+    Time = [goingoutLength, cookingLength, eatingLength, bathingLength, sleepingLength, otherLength]
+    timeCount = [goingoutLength * timeToCount, cookingLength * timeToCount, eatingLength * timeToCount, bathingLength * timeToCount, sleepingLength * timeToCount, otherLength * timeToCount]
+    xTest= makeFeatures(timeCount)
+    pred = predictStress(xTest)
+    status = stressStatus(int(pred))
+    return Time,xTest,pred,status
 
-    cookingLength  = FloatField("料理時間",
-                    [validators.InputRequired("この項目は入力必須です"),
-                    validators.NumberRange(min=0, max=10)])
+def getSleepForm():
+    id = int(request.form["id"])        
+    sleepHourStart  = int(request.form["sleepHourStart"])
+    sleepMinStart = int(request.form["sleepMinStart"])            
+    sleepHourEnd  = int(request.form["sleepHourEnd"])            
+    sleepMinEnd = int(request.form["sleepMinEnd"])    
+    return id,sleepHourStart,sleepMinStart,sleepHourEnd,sleepMinEnd
 
-    eatingLength = FloatField("食事時間",
+class sleepIdForm(Form):
+    id = IntegerField("IDを入力してください",
                     [validators.InputRequired("この項目は入力必須です"),
-                    validators.NumberRange(min=0, max=10)])
+                    validators.NumberRange(min=0, max=50)])
+    sleepHourStart  = IntegerField("入眠時間",
+                    [validators.InputRequired("この項目は入力必須です"),
+                    validators.NumberRange(min=0, max=24)])
+    sleepMinStart = IntegerField("分",
+                    [validators.InputRequired("この項目は入力必須です"),
+                    validators.NumberRange(min=0, max=59)])
+    sleepHourEnd  = IntegerField("起床時間",
+                    [validators.InputRequired("この項目は入力必須です"),
+                    validators.NumberRange(min=0, max=24)])
+    sleepMinEnd = IntegerField("分",
+                    [validators.InputRequired("この項目は入力必須です"),
+                    validators.NumberRange(min=0, max=59)])
+    accept = BooleanField("内容確認：",[validators.InputRequired("この項目は入力必須です")])
+    # html側で表示するsubmitボタンの表示
+    submitID = SubmitField("IDと睡眠時間を入力完了")
 
-    bathingLength  = FloatField("入浴時間",
+class activityFormIndex(Form):
+    goingoutLength = IntegerField("外出時間",
                     [validators.InputRequired("この項目は入力必須です"),
                     validators.NumberRange(min=0, max=10)])
-    sleepingLength  = FloatField("睡眠時間",
+    cookingLength  = IntegerField("料理時間",
                     [validators.InputRequired("この項目は入力必須です"),
                     validators.NumberRange(min=0, max=10)])
-    otherLength  = FloatField("その他時間",
+    eatingLength = IntegerField("食事時間",
+                    [validators.InputRequired("この項目は入力必須です"),
+                    validators.NumberRange(min=0, max=10)])
+    bathingLength  = IntegerField("入浴時間",
+                    [validators.InputRequired("この項目は入力必須です"),
+                    validators.NumberRange(min=0, max=10)])
+    sleepingLength  = IntegerField("睡眠時間",
+                    [validators.InputRequired("この項目は入力必須です"),
+                    validators.NumberRange(min=0, max=10)])
+    otherLength  = IntegerField("その他時間",
                     [validators.InputRequired("この項目は入力必須です"),
                     validators.NumberRange(min=0, max=10)])
     # html側で表示するsubmitボタンの表示
     submit = SubmitField("送信")
 
+
+
 @app.route('/', methods = ['GET', 'POST'])# どのページで実行する関数か設定
-def predicts():
-    form = activityForm(request.form)
+def root():
+    idForm = sleepIdForm(request.form)
+    if request.method == 'POST':
+        if idForm.validate() == False:
+            flash("全て入力する必要があります。")
+            return render_template('id.html', idForm=idForm)
+        else:
+            id,sleepHourStart,sleepMinStart,sleepHourEnd,sleepMinEnd = getSleepForm()
+            dt_now = datetime.datetime.now()
+            day = dt_now.strftime('%Y年%m月%d日 %H:%M:%S')
+            idDay=str(id)+'_'+str(day)
+            new_post = data(idDay=idDay, sleepHourStart=sleepHourStart, sleepMinStart=sleepMinStart,
+                sleepHourEnd=sleepHourEnd,sleepMinEnd=sleepMinEnd)
+            db.session.add(new_post)
+            db.session.commit()
+            return redirect(url_for('firstIndex',idDay=idDay, sleepHourStart=sleepHourStart, sleepMinStart=sleepMinStart,
+                sleepHourEnd=sleepHourEnd,sleepMinEnd=sleepMinEnd,sleepMinEnd_dummy=1))
+    elif request.method == 'GET':
+        return render_template('id.html', idForm=idForm)
+
+@app.route('/firstIndex/<idDay>/<sleepHourStart>/<sleepMinStart>/<sleepHourEnd>/<sleepMinEnd>/<sleepMinEnd_dummy>', methods = ['GET', 'POST'])# どのページで実行する関数か設定
+def firstIndex(idDay,sleepHourStart, sleepMinStart,sleepHourEnd,sleepMinEnd,sleepMinEnd_dummy):
+    form = activityFormIndex(request.form)
+    posts = data.query.all()
     if request.method == 'POST':
         if form.validate() == False:
             flash("全て入力する必要があります。")
-            return render_template('result.html', form=form)
-        else:            
-            goingoutLength = float(request.form["goingoutLength"])                       
-            cookingLength  = float(request.form["cookingLength"])
-            eatingLength = float(request.form["eatingLength"])            
-            bathingLength  = float(request.form["bathingLength"])            
-            sleepingLength = float(request.form["sleepingLength"])            
-            otherLength  = float(request.form["otherLength"])
-
-            timeToCount = 60*4
-            Time = [goingoutLength, cookingLength, eatingLength, bathingLength, sleepingLength, otherLength]
-            timeCount = [goingoutLength * timeToCount, cookingLength * timeToCount, eatingLength * timeToCount, bathingLength * timeToCount, sleepingLength * timeToCount, otherLength * timeToCount]
-            xTest= makeFeatures(timeCount)
-            pred = predictStress(xTest)
-            status = stressStatus(int(pred))
-            saveFile(Time,xTest,pred,1)
-            return render_template('result.html', form=form, pred =pred, sendStatus=status)
-
+            return render_template('firstIndex.html', form=form, idDay=idDay)
+        else:
+            Time,xTest,pred,status = getForm()
+            goingoutHour = float(request.form["goingoutLength"])                       
+            cookingHour  = float(request.form["cookingLength"])
+            eatingHour = float(request.form["eatingLength"])            
+            bathingHour  = float(request.form["bathingLength"])            
+            sleepingHour = float(request.form["sleepingLength"])            
+            otherHour  = float(request.form["otherLength"])
+            return redirect(url_for('result', goingoutHour=goingoutHour,cookingHour=cookingHour,eatingHour=eatingHour,
+            bathingHour=bathingHour,sleepingHour=sleepingHour,otherHour=otherHour, pred=int(pred), sendStatus=status ,idDay=idDay, 
+            sleepHourStart=sleepHourStart, sleepMinStart=sleepMinStart, sleepHourEnd=sleepHourEnd, sleepMinEnd=sleepMinEnd))
     elif request.method == 'GET':
-        return render_template('firstIndex.html', form=form)
+        return render_template('firstIndex.html', form=form, idDay=idDay, sleepHourStart=sleepHourStart, 
+                sleepMinStart=sleepMinStart, sleepHourEnd=sleepHourEnd, sleepMinEnd=sleepMinEnd)#id=id,sleepHourStart=sleepHourStart,sleepMinStart=sleepMinStart,sleepHourEnd=sleepHourEnd,sleepMinEnd=sleepMinEnd,)
 
-
-@app.route('/secondIndex', methods = ['GET', 'POST'])
-def secondIndex():
-    form = activityForm(request.form)
+@app.route('/secondIndex/<idDay>/<sleepHourStart>/<sleepMinStart>/<sleepHourEnd>/<sleepMinEnd>/<dummy>', methods = ['GET', 'POST'])
+def secondIndex(idDay,sleepHourStart, sleepMinStart,sleepHourEnd,sleepMinEnd,dummy):    
+    form = activityFormIndex(request.form)
+    posts = data.query.all()
     if request.method == 'POST':
         if form.validate() == False:
             flash("全て入力する必要があります。")
-            return render_template('secondIndex.html', form=form)
-        else:            
-            goingoutLength = float(request.form["goingoutLength"])                       
-            cookingLength  = float(request.form["cookingLength"])
-            eatingLength = float(request.form["eatingLength"])            
-            bathingLength  = float(request.form["bathingLength"])            
-            sleepingLength = float(request.form["sleepingLength"])            
-            otherLength  = float(request.form["otherLength"])
-            timeToCount = 60*4
-            Time = [goingoutLength, cookingLength, eatingLength, bathingLength, sleepingLength, otherLength]
-            timeCount = [goingoutLength * timeToCount, cookingLength * timeToCount, eatingLength * timeToCount, bathingLength * timeToCount, sleepingLength * timeToCount, otherLength * timeToCount]
-            xTest= makeFeatures(timeCount)
-            pred = predictStress(xTest)
-            status = stressStatus(int(pred))
-            
-            saveFile(Time,xTest,pred,2)
-            return render_template('result.html', form=form, pred =pred, sendStatus=status)
+            return render_template('secondIndex.html', form=form, idDay=idDay)
+        else:
+            Time,xTest,pred,status = getForm()
+            goingoutHour = float(request.form["goingoutLength"])                       
+            cookingHour  = float(request.form["cookingLength"])
+            eatingHour = float(request.form["eatingLength"])            
+            bathingHour  = float(request.form["bathingLength"])            
+            sleepingHour = float(request.form["sleepingLength"])            
+            otherHour  = float(request.form["otherLength"])
+            return redirect(url_for('result', goingoutHour=goingoutHour,cookingHour=cookingHour,eatingHour=eatingHour,
+            bathingHour=bathingHour,sleepingHour=sleepingHour,otherHour=otherHour, pred=int(pred), sendStatus=status ,idDay=idDay, 
+            sleepHourStart=sleepHourStart, sleepMinStart=sleepMinStart, sleepHourEnd=sleepHourEnd, sleepMinEnd=sleepMinEnd))
     elif request.method == 'GET':
-        return render_template('secondIndex.html', form=form)
+        return render_template('secondIndex.html', form=form, idDay=idDay, sleepHourStart=sleepHourStart, 
+                sleepMinStart=sleepMinStart, sleepHourEnd=sleepHourEnd, sleepMinEnd=sleepMinEnd)#id=id,sleepHourStart=sleepHourStart,sleepMinStart=sleepMinStart,sleepHourEnd=sleepHourEnd,sleepMinEnd=sleepMinEnd,)
+
+
+@app.route('/result/<goingoutHour>/<cookingHour>/<eatingHour>/<bathingHour>/<sleepingHour>/<otherHour>/<pred>/<sendStatus>/<idDay>/<sleepHourStart>/<sleepMinStart>/<sleepHourEnd>/<sleepMinEnd>', methods = ['GET', 'POST'])
+def result(goingoutHour,cookingHour,eatingHour,bathingHour,sleepingHour,otherHour, pred, sendStatus, idDay, sleepHourStart, sleepMinStart, sleepHourEnd, sleepMinEnd):
+    pred=int(pred)
+    return render_template('result.html',goingoutHour=goingoutHour,cookingHour=cookingHour,eatingHour=eatingHour,
+            bathingHour=bathingHour,sleepingHour=sleepingHour,otherHour=otherHour, pred=pred, sendStatus=sendStatus, idDay=idDay, 
+            sleepHourStart=sleepHourStart, sleepMinStart=sleepMinStart, sleepHourEnd=sleepHourEnd, sleepMinEnd=sleepMinEnd,)
 
 @app.route('/end')
-def end(): return render_template('end.html')
-
+def end(form,idForm,sendStatus):
+    return render_template('end.html',form=form, idForm=idForm,sendStatus=sendStatus)
 
 if __name__ == "__main__": # 実行されたら
     app.run(debug=True, host='0.0.0.0', port=8888, threaded=True)# デバッグモード、localhost:8888 のマルチスレッドで実行

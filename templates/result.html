@@ -8,53 +8,42 @@
             text-align: center;
          }
       </style>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
    </head>
-      <div id="wrapper">
-         {% for message in form.goingoutLength.errors %}
-            <div>{{ message }}</div>
-         {% endfor %}
-         {% for message in form.cookingLength.errors %}
-            <div>{{ message }}</div>
-         {% endfor %}
-         {% for message in form.eatingLength.errors %}
-            <div>{{ message }}</div>
-         {% endfor %}
-         {% for message in form.bathingLength.errors %}
-            <div>{{ message }}</div>
-         {% endfor %}
-         {% for message in form.sleepingLength.errors %}
-            <div>{{ message }}</div>
-         {% endfor %}
-         {% for message in form.otherLength.errors %}
-            <div>{{ message }}</div>
-         {% endfor %}
 
-         <form method="post">
-            <table align="center" border="1" >
-               <tr><th>行動の種類</th><th>過去の行動時間</th><th>今後の行動時間</th></tr>
-               <tr><td>{{ form.goingoutLength.label }}</td><td>外出4時間</td><td>{{ form.goingoutLength }}</td></tr>
-               <tr><td>{{ form.cookingLength.label }}</td><td>料理1時間</td><td>{{ form.cookingLength }}</td></tr>
-               <tr><td>{{ form.eatingLength.label }}</td><td>食事2時間</td><td>{{ form.eatingLength }}</td></tr>
-               <tr><td>{{ form.bathingLength.label }}</td><td>入浴1時間</td><td>{{ form.bathingLength }}</td></tr>
-               <tr><td>{{ form.sleepingLength.label }}</td><td>睡眠0時間</td><td>{{ form.sleepingLength }}</td></tr>
-               <tr><td>{{ form.otherLength.label }}</td><td>その他4時間</td><td>{{ form.otherLength }}</td></tr>
-               <tr>
-                  <td>{% if sendStatus %}
-                  {% if pred == 1 %}
-                     <img alt="Happy image" src="image/happy.png" >
-                  {% elif pred == 2 %}
-                     <img alt="Neutral" src="image/neutral.png" >
-                  {% else %}
-                     <img alt="Sad image" src="image/sad.png" >
-                  {% endif %}
-                  </td>
-               <td colspan="2">これは {{ sendStatus }} です</td>
-               </tr>
-            </table><br>
-            {% else %}
-            <a href="./">再度トップから入力してください。トップへ戻る</a>
-            {% endif %}
-            <a  href="{{ url_for('secondIndex') }}">もう一度予測をする。</a>
-            <a  href="{{ url_for('end') }}">この結果に満足し終了する。</a>
-         </form>
-      </div>
+   <p style="text-align: center;">
+      ID{{ idDay }}<br>
+      入眠時間 {{ sleepHourStart }}時 {{ sleepMinStart }}分（24時間表記）<br>            
+      起床時間 {{ sleepHourEnd }}時 {{ sleepMinEnd }}分（24時間表記）<br>
+   </p>
+
+   <table align="center" border="1" >
+      <tr><th>行動の種類</th><th>過去の行動時間</th><th>今後の行動時間</th></tr>
+      <tr><td> 睡眠 </td><td>外出4時間</td><td>{{ goingoutHour }}時間 </td></tr>
+      <tr><td> 外出 </td><td>料理1時間</td><td>{{ cookingHour }}時間 </td></tr>
+      <tr><td> 料理 </td><td>食事2時間</td><td>{{ eatingHour }}時間 </td></tr>
+      <tr><td> 食事 </td><td>入浴1時間</td><td>{{ bathingHour }}時間 </td></tr>
+      <tr><td> 入浴 </td><td>睡眠0時間</td><td>{{ sleepingHour }}時間 </td></tr>
+      <tr><td> その他 </td><td>その他4時間</td><td>{{ otherHour }}時間 </td></tr>
+      <tr><td>
+         {% if sendStatus %}
+         {% if pred == 1 %}
+         <img src="image/sad.png" alt="Sad image" width="50" height="50">
+         {% elif pred == 2 %}
+            <img src="image/neutral.png" alt="Neutral" width="50" height="50">
+         {% elif pred == 3 %}
+         <img src="image/happy.png" alt="Happy image" width="50" height="50">
+         {% endif %}
+      </td><td colspan="2">この予定は{{ sendStatus }}</td></tr>
+   </table><br>
+      {% else %}
+      <a href="./">再度トップから入力してください。トップへ戻る</a>
+      {% endif %}
+      <p style="text-align: center;">
+         <a href="{{ url_for('secondIndex',idDay=idDay, sleepHourStart=sleepHourStart, sleepMinStart=sleepMinStart,
+         sleepHourEnd=sleepHourEnd,sleepMinEnd=sleepMinEnd,dummy=1) }}">もう一度予測をする。</a>
+         <a href="./end">この結果に満足し終了する。</a>
+      </p>
+   </div>
+
+   
