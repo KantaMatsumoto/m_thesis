@@ -1,0 +1,16 @@
+  File "app.py", line 14
+SyntaxError: Non-ASCII character '\xe5' in file app.py on line 14, but no encoding declared; see http://python.org/dev/peps/pep-0263/ for details
+ * Serving Flask app 'app'
+ * Debug mode: on
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8888
+ * Running on http://172.31.14.20:8888
+[33mPress CTRL+C to quit[0m
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 204-523-579
+127.0.0.1 - - [12/Dec/2022 08:57:47] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [12/Dec/2022 08:57:47] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [12/Dec/2022 08:58:07] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [12/Dec/2022 08:58:08] "POST / HTTP/1.1" 200 -

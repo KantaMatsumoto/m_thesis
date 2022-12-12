@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from flask import Flask, render_template, request, flash, session, escape, redirect, url_for
 from wtforms import (
     Form, BooleanField, IntegerField, PasswordField, StringField,
@@ -9,13 +10,11 @@ import pandas as pd
 import numpy as np
 from statistics import mean
 import datetime
-from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__, static_folder='./templates/image') # Flask動かす時のおまじない。
 app.config.from_object(__name__)
 app.config['SECRET_KEY'] = 'zJe09C5c3tMf5FnNL09C5d6SAzZoY'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
-db = SQLAlchemy(app)
+
 
 features = ['RRiM','RRiS','LP_all',
 'LP_Bathing', 'LP_Cooking', 'LP_Eating', 'LP_Goingout', 'LP_Sleeping', 'LP_Other',
@@ -26,15 +25,6 @@ features = ['RRiM','RRiS','LP_all',
 'Bathing_LPSAprefer_SA', 'Cooking_LPSAprefer_SA', 'Eating_LPSAprefer_SA', 'Goingout_LPSAprefer_SA','Sleeping_LPSAprefer_SA', 'Other_LPSAprefer_SA',
 #'Bathing_LPSAprefer_LP_SA', 'Cooking_LPSAprefer_P_SA', 'Eating_LPSAprefer_LP_SA', 'Goingout_LPSAprefer_LP_SA','Sleeping_LPSAprefer_LP_SA', 'Other_LPSAprefer_LP_SA',
 ]      
-
-class data(db.Model):
-    #テーブルnameの設定,dataというnameに設定
-    __tablename__ = "data"
-    idDay = db.Column(db.String(20), primary_key=True, nullable=False)
-    sleepHourStart = db.Column(db.String(5), nullable=False)
-    sleepMinStart = db.Column(db.String(5), nullable=False)
-    sleepHourEnd = db.Column(db.String(5), nullable=False)
-    sleepMinEnd = db.Column(db.String(5), nullable=False)
 
 
 def saveFile(Time,xTest, pred, turn):#fileにdataframeを保存する用
@@ -117,7 +107,7 @@ def makeFeatures(sa):#予測用の値を生成
     #featuresDay = np.concatenate([features,featuresValue])
     return featuresValue
 
-def add_el(ar1:list, el1):#np.arrayを１列にするための関数（reshapeが使えなかったため作成）
+def add_el(ar1, el1):#np.arrayを１列にするための関数（reshapeが使えなかったため作成）
     ar1.append(el1)
     return ar1
 def makeNpArray(parameters):
@@ -270,7 +260,6 @@ def firstIndex(idDay,sleepHourStart, sleepMinStart,sleepHourEnd,sleepMinEnd,slee
 @app.route('/secondIndex/<idDay>/<sleepHourStart>/<sleepMinStart>/<sleepHourEnd>/<sleepMinEnd>/<dummy>', methods = ['GET', 'POST'])
 def secondIndex(idDay,sleepHourStart, sleepMinStart,sleepHourEnd,sleepMinEnd,dummy):    
     form = activityFormIndex(request.form)
-    posts = data.query.all()
     if request.method == 'POST':
         if form.validate() == False:
             flash("全て入力する必要があります。")
