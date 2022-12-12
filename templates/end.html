@@ -1,3 +1,48 @@
 <!DOCTYPE html>
-<title>Stress Predict App end</title>
-  <h1>これで今日の入力は終了です。</br>先ほどの入力通りに生活できるよう頑張りましょう。</h1>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>Stress Predict App Result</title>
+    <style>
+        #wrapper {
+          text-align: center;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+
+  <p style="text-align: center;">
+    ID{{ idDay }}<br>
+    入眠時間 {{ sleepHourStart }}時 {{ sleepMinStart }}分（24時間表記）<br>            
+    起床時間 {{ sleepHourEnd }}時 {{ sleepMinEnd }}分（24時間表記）<br>
+    {% set timeLeftMin = (timeLeft|float - timeLeft|int)*60 %}
+    睡眠までの残り時間 {{ timeLeft|int }}時間 {{ timeLeftMin|int }}分
+  </p>
+
+  <form action="result" method="POST">
+    <table align="center" border="1" >
+      {% set sleepingMin = (sleepingLength|float - sleepingLength|int)*60 %}
+      <tr><th>行動の種類</th><th>過去の行動時間</th><th>今後の行動時間</th></tr>
+      <tr><td>睡眠</td><td></td><td>{{ sleepingLength|int }}時間 {{ sleepingMin|int }}分 </td></tr>
+      <tr><td> 外出 </td><td></td><td>{{ goingoutLength|int }}時間 {{ goingoutLength|int }}分</td></tr>
+      <tr><td> 料理 </td><td></td><td>{{ cookingLength|int }}時間 {{ cookingLength|int }}分</td></tr>
+      <tr><td> 食事 </td><td></td><td> {{ eatingLength|int }}時間 {{ eatingLength|int }}分</td></tr>
+      <tr><td> 入浴 </td><td></td><td>{{ bathingLength|int }}時間 {{ bathingLength|int }}分</td></tr>
+      <tr><td> その他 </td><td></td><td>{{ otherLength|int }}時間 {{ otherLength|int }}分</td></tr>
+      <tr><td>
+      {% if sendStatus %}
+        {% if pred == 1 %}
+          <img src="/templates/image/sad.png" alt="Sad image" width="50" height="50">
+        {% elif pred == 2 %}
+          <img src="/templates/image/neutral.png" alt="Neutral" width="50" height="50">
+        {% elif pred == 3 %}
+          <img src="/templates/image/happy.png" alt="Happy image" width="50" height="50">
+        {% endif %}
+      </td><td colspan="2">この予定は{{ sendStatus }}</td></tr>
+      </table><br>
+      {% else %}
+    <a href="./">再度トップから入力してください。トップへ戻る</a>
+    {% endif %}
+
+<h1 style="text-align: center;">これで今日の入力は終了です。</br>入力通りに生活できるよう頑張りましょう。</h1>
+</div>

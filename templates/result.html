@@ -15,34 +15,47 @@
       ID{{ idDay }}<br>
       入眠時間 {{ sleepHourStart }}時 {{ sleepMinStart }}分（24時間表記）<br>            
       起床時間 {{ sleepHourEnd }}時 {{ sleepMinEnd }}分（24時間表記）<br>
+      {% set timeLeftMin = (timeLeft|float - timeLeft|int)*60 %}
+      睡眠までの残り時間 {{ timeLeft|int }}時間 {{ timeLeftMin|int }}分
    </p>
 
-   <table align="center" border="1" >
+   <form action="result" method="POST">
+      <table align="center" border="1" >
+      {% set sleepingMin = (sleepingLength|float - sleepingLength|int)*60 %}
+      {% set goingoutMin = (goingoutLength|float - goingoutLength|int)*60 %}
+      {% set cookingMin = (cookingLength|float - cookingLength|int)*60 %}
+      {% set eatingMin = (eatingLength|float - eatingLength|int)*60 %}
+      {% set bathingMin = (bathingLength|float - bathingLength|int)*60 %}
+      {% set otherMin = (otherLength|float - otherLength|int)*60 %}
+
       <tr><th>行動の種類</th><th>過去の行動時間</th><th>今後の行動時間</th></tr>
-      <tr><td> 睡眠 </td><td>外出4時間</td><td>{{ goingoutHour }}時間 </td></tr>
-      <tr><td> 外出 </td><td>料理1時間</td><td>{{ cookingHour }}時間 </td></tr>
-      <tr><td> 料理 </td><td>食事2時間</td><td>{{ eatingHour }}時間 </td></tr>
-      <tr><td> 食事 </td><td>入浴1時間</td><td>{{ bathingHour }}時間 </td></tr>
-      <tr><td> 入浴 </td><td>睡眠0時間</td><td>{{ sleepingHour }}時間 </td></tr>
-      <tr><td> その他 </td><td>その他4時間</td><td>{{ otherHour }}時間 </td></tr>
+      <tr><td>睡眠</td><td></td><td>{{ sleepingLength|int }}時間 {{ sleepingMin|int }}分 </td></tr>
+      <tr><td> 外出 </td><td></td><td>{{ goingoutLength|int }}時間 {{ goingoutMin|int }}分 </td></tr>
+      <tr><td> 料理 </td><td></td><td>{{ cookingLength|int }}時間 {{ cookingMin|int }}分 </td></tr>
+      <tr><td> 食事 </td><td></td><td>{{ eatingLength|int }}時間 {{ eatingMin|int }}分 </td></tr>
+      <tr><td> 入浴 </td><td></td><td>{{ bathingLength|int }}時間 {{ bathingMin|int }}分 </td></tr>
+      <tr><td> その他 </td><td></td><td>{{ otherLength|int }}時間 {{ otherMin|int }}分 </td></tr>
       <tr><td>
-         {% if sendStatus %}
+      {% if sendStatus %}
          {% if pred == 1 %}
-         <img src="image/sad.png" alt="Sad image" width="50" height="50">
+            <img src="/templates/image/sad.png" alt="Sad image" width="50" height="50">
          {% elif pred == 2 %}
-            <img src="image/neutral.png" alt="Neutral" width="50" height="50">
+            <img src="/templates/image/neutral.png" alt="Neutral" width="50" height="50">
          {% elif pred == 3 %}
-         <img src="image/happy.png" alt="Happy image" width="50" height="50">
+            <img src="/templates/image/happy.png" alt="Happy image" width="50" height="50">
          {% endif %}
       </td><td colspan="2">この予定は{{ sendStatus }}</td></tr>
-   </table><br>
+      </table><br>
       {% else %}
       <a href="./">再度トップから入力してください。トップへ戻る</a>
       {% endif %}
       <p style="text-align: center;">
          <a href="{{ url_for('secondIndex',idDay=idDay, sleepHourStart=sleepHourStart, sleepMinStart=sleepMinStart,
-         sleepHourEnd=sleepHourEnd,sleepMinEnd=sleepMinEnd,dummy=1) }}">もう一度予測をする。</a>
-         <a href="./end">この結果に満足し終了する。</a>
+         sleepHourEnd=sleepHourEnd,sleepMinEnd=sleepMinEnd,sleepingLength=sleepingLength,timeLeft=timeLeft,dummy=1) }}">もう一度予測をする。</a>
+         <br>
+         <a href="{{ url_for('end', goingoutLength=goingoutLength,cookingLength=cookingLength,eatingLength=eatingLength,
+         bathingLength=bathingLength,otherLength=otherLength, pred=pred, sendStatus=sendStatus ,idDay=idDay, 
+         sleepHourStart=sleepHourStart, sleepMinStart=sleepMinStart, sleepHourEnd=sleepHourEnd, sleepMinEnd=sleepMinEnd,sleepingLength=sleepingLength, timeLeft=timeLeft,) }}">この結果に満足し終了する。</a>
       </p>
    </div>
 
