@@ -29,7 +29,6 @@ features = ['RRiM','RRiS','LP_all',
 def saveFile(id, day, goingoutLength,cookingLength,eatingLength,bathingLength,otherLength, pred, 
         sleepHourStart, sleepMinStart, sleepHourEnd, sleepMinEnd,sleepingLength, timeLeft,
         goingoutLengthPre,cookingLengthPre,eatingLengthPre,bathingLengthPre,otherLengthPre,fileState):#fileにdataframeを保存する用
-    dtNow = datetime.datetime.now()
     try:
         for p in pred:
             for p2 in p:
@@ -342,8 +341,13 @@ def root():
             return render_template('id.html', idForm=idForm)
         else:
             id,sleepHourStart,sleepMinStart,sleepHourEnd,sleepMinEnd,goingoutLengthPre,cookingLengthPre,eatingLengthPre,bathingLengthPre,otherLengthPre = getSleepForm()
+<<<<<<< HEAD
 
             dtNow = datetime.datetime.now()+datetime.timedelta(hours=9)
+=======
+            dtNow = datetime.datetime.now()
+            dtNow = dtNow + datetime.timedelta(hours=9)
+>>>>>>> origin/main
             day = dtNow.strftime('%Y年%m月%d日 %H:%M:%S')
             if sleepHourStart >= 18:
                 sleepingLength = (24 - (sleepHourStart + sleepMinStart/60)) + (sleepHourEnd + sleepMinEnd/60)

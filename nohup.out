@@ -554,3 +554,9 @@ https://scikit-learn.org/stable/modules/model_persistence.html#security-maintain
 127.0.0.1 - - [13/Dec/2022 11:39:04] "[36mGET /templates/image/sad.png HTTP/1.1[0m" 304 -
 127.0.0.1 - - [13/Dec/2022 11:39:09] "GET /end/0.0/0.0/0.0/0.0/0.0/1/体調が悪くなるでしょう/0/2022年12月13日%2020:38:47/0/0/0/0/0.0/3.666666666666668/0.0/0.0/0.0/0.0/0.0 HTTP/1.1" 200 -
 127.0.0.1 - - [13/Dec/2022 11:39:09] "[36mGET /templates/image/sad.png HTTP/1.1[0m" 304 -
+ * Detected change in '/home/ec2-user/m_thesis/app.py', reloading
+ * Restarting with stat
+  File "/home/ec2-user/m_thesis/app.py", line 344
+    <<<<<<< HEAD
+     ^
+SyntaxError: invalid syntax
