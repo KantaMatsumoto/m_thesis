@@ -592,3 +592,24 @@ https://scikit-learn.org/stable/modules/model_persistence.html#security-maintain
 127.0.0.1 - - [13/Dec/2022 11:52:16] "[36mGET /templates/image/sad.png HTTP/1.1[0m" 304 -
 127.0.0.1 - - [13/Dec/2022 11:52:59] "GET / HTTP/1.1" 200 -
 127.0.0.1 - - [13/Dec/2022 11:53:00] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 11:56:52] "[32mPOST / HTTP/1.1[0m" 302 -
+127.0.0.1 - - [13/Dec/2022 11:56:52] "GET /firstIndex/1/2022年12月13日%2020:56:52/23/30/8/10/3.166666666666668/8.666666666666666/0.0/0.0/0.3333333333333333/9.0/3.4166666666666665/1 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 12:01:24] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 12:01:24] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 12:01:31] "[32mPOST / HTTP/1.1[0m" 302 -
+127.0.0.1 - - [13/Dec/2022 12:01:31] "GET /firstIndex/1/2022年12月13日%2021:01:31/23/30/8/10/2.1499999999999986/8.666666666666666/8.0/0.0/0.16666666666666666/0.31666666666666665/12.5/1 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 12:04:12] "[32mPOST / HTTP/1.1[0m" 302 -
+127.0.0.1 - - [13/Dec/2022 12:04:12] "GET /firstIndex/1/2022年12月13日%2021:04:12/23/30/8/10/2.1499999999999986/8.666666666666666/8.0/0.0/0.3/0.31666666666666665/3.7666666666666666/1 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 12:04:28] "[32mPOST / HTTP/1.1[0m" 302 -
+127.0.0.1 - - [13/Dec/2022 12:04:28] "GET /firstIndex/1/2022年12月13日%2021:04:28/23/30/8/10/2.1499999999999986/8.666666666666666/0.0/0.0/0.3/0.31666666666666665/3.7666666666666666/1 HTTP/1.1" 200 -
+/home/ec2-user/myenv/lib64/python3.7/site-packages/sklearn/base.py:338: UserWarning: Trying to unpickle estimator DecisionTreeClassifier from version 0.24.2 when using version 1.0.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/modules/model_persistence.html#security-maintainability-limitations
+  UserWarning,
+/home/ec2-user/myenv/lib64/python3.7/site-packages/sklearn/base.py:338: UserWarning: Trying to unpickle estimator RandomForestClassifier from version 0.24.2 when using version 1.0.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/modules/model_persistence.html#security-maintainability-limitations
+  UserWarning,
+127.0.0.1 - - [13/Dec/2022 12:04:59] "[32mPOST /firstIndex/1/2022年12月13日%2021:04:28/23/30/8/10/2.1499999999999986/8.666666666666666/0.0/0.0/0.3/0.31666666666666665/3.7666666666666666/result HTTP/1.1[0m" 302 -
+127.0.0.1 - - [13/Dec/2022 12:04:59] "GET /result/0.0/0.0/0.3333333333333333/0.3333333333333333/2.0/2/体調が維持されるでしょう/1/2022年12月13日%2021:04:28/23/30/8/10/8.666666666666666/2.1499999999999986/0.0/0.0/0.3/0.31666666666666665/3.7666666666666666 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 12:04:59] "GET /templates/image/neutral.png HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 12:05:32] "GET /end/0.0/0.0/0.3333333333333333/0.3333333333333333/2.0/2/体調が維持されるでしょう/1/2022年12月13日%2021:04:28/23/30/8/10/8.666666666666666/2.1499999999999986/0.0/0.0/0.3/0.31666666666666665/3.7666666666666666 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 12:05:33] "[36mGET /templates/image/neutral.png HTTP/1.1[0m" 304 -
