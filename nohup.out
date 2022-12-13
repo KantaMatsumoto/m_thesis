@@ -554,3 +554,41 @@ https://scikit-learn.org/stable/modules/model_persistence.html#security-maintain
 127.0.0.1 - - [13/Dec/2022 11:39:04] "[36mGET /templates/image/sad.png HTTP/1.1[0m" 304 -
 127.0.0.1 - - [13/Dec/2022 11:39:09] "GET /end/0.0/0.0/0.0/0.0/0.0/1/体調が悪くなるでしょう/0/2022年12月13日%2020:38:47/0/0/0/0/0.0/3.666666666666668/0.0/0.0/0.0/0.0/0.0 HTTP/1.1" 200 -
 127.0.0.1 - - [13/Dec/2022 11:39:09] "[36mGET /templates/image/sad.png HTTP/1.1[0m" 304 -
+ * Detected change in '/home/ec2-user/m_thesis/app.py', reloading
+ * Restarting with stat
+  File "/home/ec2-user/m_thesis/app.py", line 344
+    <<<<<<< HEAD
+     ^
+SyntaxError: invalid syntax
+ * Serving Flask app 'app'
+ * Debug mode: on
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8888
+ * Running on http://172.31.14.20:8888
+[33mPress CTRL+C to quit[0m
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 204-523-579
+127.0.0.1 - - [13/Dec/2022 11:49:30] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 11:49:31] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 11:49:42] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 11:50:29] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 11:50:33] "GET /end/0.0/0.0/0.0/0.0/0.0/1/体調が悪くなるでしょう/0/2022年12月13日%2020:38:47/0/0/0/0/0.0/3.666666666666668/0.0/0.0/0.0/0.0/0.0 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 11:50:34] "[36mGET /templates/image/sad.png HTTP/1.1[0m" 304 -
+127.0.0.1 - - [13/Dec/2022 11:51:45] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 11:51:48] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 11:52:03] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 11:52:11] "[32mPOST / HTTP/1.1[0m" 302 -
+127.0.0.1 - - [13/Dec/2022 11:52:11] "GET /firstIndex/0/2022年12月13日%2020:52:11/0/0/0/0/3.666666666666668/0.0/0.0/0.0/0.0/0.0/0.0/1 HTTP/1.1" 200 -
+/home/ec2-user/myenv/lib64/python3.7/site-packages/sklearn/base.py:338: UserWarning: Trying to unpickle estimator DecisionTreeClassifier from version 0.24.2 when using version 1.0.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/modules/model_persistence.html#security-maintainability-limitations
+  UserWarning,
+/home/ec2-user/myenv/lib64/python3.7/site-packages/sklearn/base.py:338: UserWarning: Trying to unpickle estimator RandomForestClassifier from version 0.24.2 when using version 1.0.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/modules/model_persistence.html#security-maintainability-limitations
+  UserWarning,
+127.0.0.1 - - [13/Dec/2022 11:52:16] "[32mPOST /firstIndex/0/2022年12月13日%2020:52:11/0/0/0/0/3.666666666666668/0.0/0.0/0.0/0.0/0.0/0.0/result HTTP/1.1[0m" 302 -
+127.0.0.1 - - [13/Dec/2022 11:52:16] "GET /result/0.0/0.0/0.0/0.0/0.0/1/体調が悪くなるでしょう/0/2022年12月13日%2020:52:11/0/0/0/0/0.0/3.666666666666668/0.0/0.0/0.0/0.0/0.0 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 11:52:16] "[36mGET /templates/image/sad.png HTTP/1.1[0m" 304 -
+127.0.0.1 - - [13/Dec/2022 11:52:59] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 11:53:00] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
