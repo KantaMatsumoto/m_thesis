@@ -14,3 +14,543 @@ SyntaxError: Non-ASCII character '\xe5' in file app.py on line 14, but no encodi
 127.0.0.1 - - [12/Dec/2022 08:57:47] "POST / HTTP/1.1" 200 -
 127.0.0.1 - - [12/Dec/2022 08:58:07] "[33mGET /.env HTTP/1.1[0m" 404 -
 127.0.0.1 - - [12/Dec/2022 08:58:08] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [12/Dec/2022 09:07:30] "[33mCONNECT github.com:443 HTTP/1.1[0m" 404 -
+127.0.0.1 - - [12/Dec/2022 09:08:52] "[33mCONNECT github.com:443 HTTP/1.1[0m" 404 -
+127.0.0.1 - - [12/Dec/2022 09:08:53] "[33mCONNECT github.com:443 HTTP/1.1[0m" 404 -
+127.0.0.1 - - [12/Dec/2022 09:09:38] "[33mCONNECT github.com:443 HTTP/1.1[0m" 404 -
+127.0.0.1 - - [12/Dec/2022 09:09:41] "[33mCONNECT github.com:443 HTTP/1.1[0m" 404 -
+127.0.0.1 - - [12/Dec/2022 09:10:50] "[33mCONNECT github.com:443 HTTP/1.1[0m" 404 -
+127.0.0.1 - - [12/Dec/2022 09:12:29] "[33mCONNECT github.com:443 HTTP/1.1[0m" 404 -
+127.0.0.1 - - [12/Dec/2022 09:14:42] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [12/Dec/2022 09:31:12] "[33mCONNECT github.com:443 HTTP/1.1[0m" 404 -
+127.0.0.1 - - [12/Dec/2022 09:51:26] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [12/Dec/2022 09:53:53] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [12/Dec/2022 09:54:40] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+127.0.0.1 - - [12/Dec/2022 10:11:22] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [12/Dec/2022 10:11:23] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [12/Dec/2022 10:11:48] "[33mGET /.git/config HTTP/1.1[0m" 404 -
+127.0.0.1 - - [12/Dec/2022 10:28:05] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [12/Dec/2022 10:28:06] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [12/Dec/2022 10:28:56] "[33mHEAD /Core/Skin/Login.aspx HTTP/1.1[0m" 404 -
+127.0.0.1 - - [12/Dec/2022 11:17:07] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [12/Dec/2022 11:22:30] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [12/Dec/2022 11:22:30] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+127.0.0.1 - - [12/Dec/2022 11:22:30] "[33mGET /robots.txt HTTP/1.1[0m" 404 -
+127.0.0.1 - - [12/Dec/2022 11:47:18] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [12/Dec/2022 11:47:19] "POST / HTTP/1.1" 200 -
+Traceback (most recent call last):
+  File "/home/ec2-user/myenv/lib64/python3.7/site-packages/flask/app.py", line 2548, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/ec2-user/myenv/lib64/python3.7/site-packages/flask/app.py", line 2528, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/ec2-user/myenv/lib64/python3.7/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ec2-user/myenv/lib64/python3.7/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/home/ec2-user/myenv/lib64/python3.7/site-packages/flask/app.py", line 1842, in finalize_request
+    response = self.make_response(rv)
+  File "/home/ec2-user/myenv/lib64/python3.7/site-packages/flask/app.py", line 2135, in make_response
+    f"The view function for {request.endpoint!r} did not"
+TypeError: The view function for 'root' did not return a valid response. The function either returned None or ended without a return statement.
+127.0.0.1 - - [12/Dec/2022 11:50:59] "[35m[1mHEAD / HTTP/1.1[0m" 500 -
+127.0.0.1 - - [12/Dec/2022 12:10:19] "[33mGET /:80:undefined?id= HTTP/1.1[0m" 404 -
+127.0.0.1 - - [12/Dec/2022 12:14:50] "[33mPOST /boaform/admin/formLogin HTTP/1.1[0m" 404 -
+127.0.0.1 - - [12/Dec/2022 13:01:44] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [12/Dec/2022 13:01:44] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [12/Dec/2022 13:01:45] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+127.0.0.1 - - [12/Dec/2022 13:25:41] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [12/Dec/2022 13:31:39] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [12/Dec/2022 14:17:19] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [12/Dec/2022 14:17:20] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [12/Dec/2022 15:40:32] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [12/Dec/2022 15:49:08] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [12/Dec/2022 15:49:09] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [12/Dec/2022 16:30:48] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [12/Dec/2022 17:12:27] "[33mPOST /GponForm/diag_Form?images/ HTTP/1.1[0m" 404 -
+127.0.0.1 - - [12/Dec/2022 17:16:09] "[33mGET /boaform/admin/formLogin?username=user&psd=user HTTP/1.1[0m" 404 -
+127.0.0.1 - - [12/Dec/2022 17:44:19] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [12/Dec/2022 17:44:20] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [12/Dec/2022 18:24:06] "[33mGET /apis/apps/v1/namespaces/kube-system/daemonsets/ HTTP/1.1[0m" 404 -
+127.0.0.1 - - [12/Dec/2022 19:01:41] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [12/Dec/2022 19:01:42] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [12/Dec/2022 19:04:53] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [12/Dec/2022 19:04:54] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [12/Dec/2022 19:16:19] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [12/Dec/2022 19:18:12] "GET /?XDEBUG_SESSION_START=phpstorm HTTP/1.1" 200 -
+127.0.0.1 - - [12/Dec/2022 19:32:08] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [12/Dec/2022 19:32:08] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [12/Dec/2022 19:38:47] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [12/Dec/2022 20:30:41] "[33mGET /portal/redlion HTTP/1.1[0m" 404 -
+127.0.0.1 - - [12/Dec/2022 20:53:28] "[33mGET /actuator/health HTTP/1.1[0m" 404 -
+127.0.0.1 - - [12/Dec/2022 20:55:00] "[33mGET /hudson HTTP/1.1[0m" 404 -
+127.0.0.1 - - [12/Dec/2022 21:20:45] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [12/Dec/2022 21:20:45] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [12/Dec/2022 21:28:53] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [12/Dec/2022 21:28:54] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [12/Dec/2022 21:30:48] "[33mGET /.git/config HTTP/1.1[0m" 404 -
+127.0.0.1 - - [12/Dec/2022 22:15:02] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [12/Dec/2022 22:15:03] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [12/Dec/2022 22:54:08] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [12/Dec/2022 22:54:08] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [12/Dec/2022 23:16:42] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [12/Dec/2022 23:22:35] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [12/Dec/2022 23:22:35] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [12/Dec/2022 23:22:36] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+127.0.0.1 - - [12/Dec/2022 23:50:59] "[31m[1mCONNECT / HTTP/1.1[0m" 405 -
+127.0.0.1 - - [13/Dec/2022 00:13:17] "[33mGET /Telerik.Web.UI.WebResource.axd?type=rau HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 00:13:33] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 00:13:35] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 00:49:41] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 00:49:42] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 00:55:37] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 01:25:03] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 01:25:05] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 01:51:13] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 01:51:13] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 02:09:25] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 02:09:25] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 02:09:26] "[33mGET /_profiler/phpinfo HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 02:09:26] "[33mGET /phpinfo.php HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 02:09:26] "[33mGET /phpinfo HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 02:09:27] "[33mGET /aws.yml HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 02:09:27] "[33mGET /.env.bak HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 02:09:27] "[33mGET /info.php HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 02:09:27] "[33mGET /.aws/credentials HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 02:09:28] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 02:09:28] "[33mGET /config/aws.yml HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 02:09:28] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 02:09:28] "[33mGET /config.js HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 02:17:53] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 02:21:57] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 02:22:19] "[33mHEAD /Core/Skin/Login.aspx HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 02:26:56] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 02:44:50] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 03:00:35] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 03:12:15] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 03:12:16] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 03:21:16] "[33mGET /ReportServer HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 03:35:14] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 03:35:15] "[33mGET /wp-includes/wlwmanifest.xml HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 03:35:15] "[33mGET /xmlrpc.php?rsd HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 03:35:15] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 03:35:15] "[33mGET /blog/wp-includes/wlwmanifest.xml HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 03:35:15] "[33mGET /web/wp-includes/wlwmanifest.xml HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 03:35:15] "[33mGET /wordpress/wp-includes/wlwmanifest.xml HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 03:35:15] "[33mGET /website/wp-includes/wlwmanifest.xml HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 03:35:15] "[33mGET /wp/wp-includes/wlwmanifest.xml HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 03:35:15] "[33mGET /news/wp-includes/wlwmanifest.xml HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 03:35:16] "[33mGET /2015/wp-includes/wlwmanifest.xml HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 03:35:16] "[33mGET /2016/wp-includes/wlwmanifest.xml HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 03:35:16] "[33mGET /2017/wp-includes/wlwmanifest.xml HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 03:35:16] "[33mGET /2018/wp-includes/wlwmanifest.xml HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 03:35:16] "[33mGET /shop/wp-includes/wlwmanifest.xml HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 03:35:16] "[33mGET /wp1/wp-includes/wlwmanifest.xml HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 03:35:16] "[33mGET /test/wp-includes/wlwmanifest.xml HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 03:35:16] "[33mGET /media/wp-includes/wlwmanifest.xml HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 03:35:16] "[33mGET /wp2/wp-includes/wlwmanifest.xml HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 03:35:17] "[33mGET /site/wp-includes/wlwmanifest.xml HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 03:35:17] "[33mGET /cms/wp-includes/wlwmanifest.xml HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 03:35:17] "[33mGET /sito/wp-includes/wlwmanifest.xml HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 03:53:38] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 03:53:39] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 04:40:38] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 05:26:05] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 05:26:06] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 05:33:15] "[33mPOST /boaform/admin/formLogin HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 05:41:07] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 05:47:14] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 05:47:15] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 07:32:21] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 07:40:25] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 07:40:25] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 08:03:32] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 08:03:33] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 08:17:42] "[33mGET /_profiler/phpinfo HTTP/1.1[0m" 404 -
+ * Detected change in '/home/ec2-user/m_thesis/nn.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 204-523-579
+127.0.0.1 - - [13/Dec/2022 08:19:34] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 08:19:35] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 08:19:57] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 08:19:58] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 08:20:00] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 08:20:01] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 08:20:01] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 08:20:02] "[33mGET /apple-touch-icon-120x120-precomposed.png HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 08:20:02] "[33mGET /apple-touch-icon-120x120.png HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 08:20:02] "[33mGET /apple-touch-icon-precomposed.png HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 08:20:02] "[33mGET /apple-touch-icon.png HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 08:20:02] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 08:20:02] "[33mGET /apple-touch-icon-120x120-precomposed.png HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 08:20:02] "[33mGET /apple-touch-icon-120x120.png HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 08:20:02] "[33mGET /apple-touch-icon-precomposed.png HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 08:20:02] "[33mGET /apple-touch-icon.png HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 08:20:02] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 08:20:02] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 08:20:29] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 08:20:58] "[32mPOST / HTTP/1.1[0m" 302 -
+127.0.0.1 - - [13/Dec/2022 08:20:58] "GET /firstIndex/0/2022年12月13日%2008:20:58/0/10/0/10/16.033333333333335/0.0/8.0/0.0/0.5/0.0/2.0/1 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 08:21:26] "[35m[1mPOST /firstIndex/0/2022年12月13日%2008:20:58/0/10/0/10/16.033333333333335/0.0/8.0/0.0/0.5/0.0/2.0/result HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/home/ec2-user/myenv/lib64/python3.7/site-packages/flask/app.py", line 2548, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/ec2-user/myenv/lib64/python3.7/site-packages/flask/app.py", line 2528, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/ec2-user/myenv/lib64/python3.7/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ec2-user/myenv/lib64/python3.7/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ec2-user/myenv/lib64/python3.7/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ec2-user/myenv/lib64/python3.7/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/ec2-user/m_thesis/app.py", line 386, in firstIndex
+    Time,xTest,pred,sendStatus = getForm(sleepingLength,goingoutLength,cookingLength,eatingLength,bathingLength,otherLength,numberTimes=0)
+  File "/home/ec2-user/m_thesis/app.py", line 164, in getForm
+    pred = predictStress(xTest)
+  File "/home/ec2-user/m_thesis/app.py", line 136, in predictStress
+    model = joblib.load('./nn.pkl')
+  File "/home/ec2-user/myenv/lib64/python3.7/site-packages/joblib/numpy_pickle.py", line 658, in load
+    obj = _unpickle(fobj, filename, mmap_mode)
+  File "/home/ec2-user/myenv/lib64/python3.7/site-packages/joblib/numpy_pickle.py", line 577, in _unpickle
+    obj = unpickler.load()
+  File "/usr/lib64/python3.7/pickle.py", line 1088, in load
+    dispatch[key[0]](self)
+  File "/usr/lib64/python3.7/pickle.py", line 1385, in load_stack_global
+    self.append(self.find_class(module, name))
+  File "/usr/lib64/python3.7/pickle.py", line 1426, in find_class
+    __import__(module, level=0)
+ModuleNotFoundError: No module named 'sklearn'
+127.0.0.1 - - [13/Dec/2022 08:21:26] "GET /firstIndex/0/2022年12月13日%2008:20:58/0/10/0/10/16.033333333333335/0.0/8.0/0.0/0.5/0.0/2.0/result?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 08:21:26] "GET /firstIndex/0/2022年12月13日%2008:20:58/0/10/0/10/16.033333333333335/0.0/8.0/0.0/0.5/0.0/2.0/result?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 08:21:26] "GET /firstIndex/0/2022年12月13日%2008:20:58/0/10/0/10/16.033333333333335/0.0/8.0/0.0/0.5/0.0/2.0/result?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 08:21:26] "[36mGET /firstIndex/0/2022年12月13日%2008:20:58/0/10/0/10/16.033333333333335/0.0/8.0/0.0/0.5/0.0/2.0/result?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+127.0.0.1 - - [13/Dec/2022 08:23:00] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 08:23:05] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 08:33:26] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 08:36:06] "[33mCONNECT pypi.org:443 HTTP/1.0[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 08:36:06] "[33mCONNECT pypi.org:443 HTTP/1.0[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 08:36:06] "[33mCONNECT pypi.org:443 HTTP/1.0[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 08:36:07] "[33mCONNECT pypi.org:443 HTTP/1.0[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 08:36:09] "[33mCONNECT pypi.org:443 HTTP/1.0[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 08:36:12] "[33mCONNECT pypi.org:443 HTTP/1.0[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 08:39:03] "[31m[1mCONNECT / HTTP/1.1[0m" 405 -
+127.0.0.1 - - [13/Dec/2022 08:39:03] "[31m[1mCONNECT / HTTP/1.1[0m" 405 -
+127.0.0.1 - - [13/Dec/2022 08:39:04] "[31m[1mCONNECT / HTTP/1.1[0m" 405 -
+127.0.0.1 - - [13/Dec/2022 08:39:05] "[31m[1mCONNECT / HTTP/1.1[0m" 405 -
+127.0.0.1 - - [13/Dec/2022 08:39:07] "[31m[1mCONNECT / HTTP/1.1[0m" 405 -
+127.0.0.1 - - [13/Dec/2022 08:39:11] "[31m[1mCONNECT / HTTP/1.1[0m" 405 -
+127.0.0.1 - - [13/Dec/2022 08:39:11] "[31m[1mCONNECT / HTTP/1.1[0m" 405 -
+127.0.0.1 - - [13/Dec/2022 08:40:28] "[33mCONNECT pypi.org:443 HTTP/1.0[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 08:40:28] "[33mCONNECT pypi.org:443 HTTP/1.0[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 08:40:29] "[33mCONNECT pypi.org:443 HTTP/1.0[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 08:40:30] "[33mCONNECT pypi.org:443 HTTP/1.0[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 08:40:32] "[33mCONNECT pypi.org:443 HTTP/1.0[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 08:40:36] "[33mCONNECT pypi.org:443 HTTP/1.0[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 08:40:36] "[33mCONNECT pypi.org:443 HTTP/1.0[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 08:42:58] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 08:42:58] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 08:44:34] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 08:53:10] "[35m[1mPOST /firstIndex/0/2022年12月13日%2008:20:58/0/10/0/10/16.033333333333335/0.0/8.0/0.0/0.5/0.0/2.0/result HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/home/ec2-user/myenv/lib64/python3.7/site-packages/flask/app.py", line 2548, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/ec2-user/myenv/lib64/python3.7/site-packages/flask/app.py", line 2528, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/ec2-user/myenv/lib64/python3.7/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ec2-user/myenv/lib64/python3.7/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ec2-user/myenv/lib64/python3.7/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ec2-user/myenv/lib64/python3.7/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/ec2-user/m_thesis/app.py", line 386, in firstIndex
+    Time,xTest,pred,sendStatus = getForm(sleepingLength,goingoutLength,cookingLength,eatingLength,bathingLength,otherLength,numberTimes=0)
+  File "/home/ec2-user/m_thesis/app.py", line 164, in getForm
+    pred = predictStress(xTest)
+  File "/home/ec2-user/m_thesis/app.py", line 136, in predictStress
+    model = joblib.load('./nn.pkl')
+  File "/home/ec2-user/myenv/lib64/python3.7/site-packages/joblib/numpy_pickle.py", line 658, in load
+    obj = _unpickle(fobj, filename, mmap_mode)
+  File "/home/ec2-user/myenv/lib64/python3.7/site-packages/joblib/numpy_pickle.py", line 577, in _unpickle
+    obj = unpickler.load()
+  File "/usr/lib64/python3.7/pickle.py", line 1088, in load
+    dispatch[key[0]](self)
+  File "/usr/lib64/python3.7/pickle.py", line 1385, in load_stack_global
+    self.append(self.find_class(module, name))
+  File "/usr/lib64/python3.7/pickle.py", line 1426, in find_class
+    __import__(module, level=0)
+ModuleNotFoundError: No module named 'sklearn'
+127.0.0.1 - - [13/Dec/2022 08:53:11] "[36mGET /firstIndex/0/2022年12月13日%2008:20:58/0/10/0/10/16.033333333333335/0.0/8.0/0.0/0.5/0.0/2.0/result?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [13/Dec/2022 08:53:11] "[36mGET /firstIndex/0/2022年12月13日%2008:20:58/0/10/0/10/16.033333333333335/0.0/8.0/0.0/0.5/0.0/2.0/result?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [13/Dec/2022 08:53:11] "[36mGET /firstIndex/0/2022年12月13日%2008:20:58/0/10/0/10/16.033333333333335/0.0/8.0/0.0/0.5/0.0/2.0/result?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+127.0.0.1 - - [13/Dec/2022 10:46:35] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 10:46:58] "[32mPOST / HTTP/1.1[0m" 302 -
+127.0.0.1 - - [13/Dec/2022 10:46:58] "GET /firstIndex/0/2022年12月13日%2010:46:58/0/0/2/0/13.833333333333334/2.0/0.0/0.0/0.0/0.0/0.0/1 HTTP/1.1" 200 -
+/home/ec2-user/myenv/lib64/python3.7/site-packages/sklearn/base.py:338: UserWarning: Trying to unpickle estimator DecisionTreeClassifier from version 0.24.2 when using version 1.0.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/modules/model_persistence.html#security-maintainability-limitations
+  UserWarning,
+/home/ec2-user/myenv/lib64/python3.7/site-packages/sklearn/base.py:338: UserWarning: Trying to unpickle estimator RandomForestClassifier from version 0.24.2 when using version 1.0.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/modules/model_persistence.html#security-maintainability-limitations
+  UserWarning,
+/home/ec2-user/myenv/lib64/python3.7/site-packages/sklearn/base.py:338: UserWarning: Trying to unpickle estimator DecisionTreeClassifier from version 0.24.2 when using version 1.0.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/modules/model_persistence.html#security-maintainability-limitations
+  UserWarning,
+/home/ec2-user/myenv/lib64/python3.7/site-packages/sklearn/base.py:338: UserWarning: Trying to unpickle estimator DecisionTreeClassifier from version 0.24.2 when using version 1.0.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/modules/model_persistence.html#security-maintainability-limitations
+  UserWarning,
+127.0.0.1 - - [13/Dec/2022 10:47:11] "[32mPOST /firstIndex/0/2022年12月13日%2010:46:58/0/0/2/0/13.833333333333334/2.0/0.0/0.0/0.0/0.0/0.0/result HTTP/1.1[0m" 302 -
+/home/ec2-user/myenv/lib64/python3.7/site-packages/sklearn/base.py:338: UserWarning: Trying to unpickle estimator RandomForestClassifier from version 0.24.2 when using version 1.0.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/modules/model_persistence.html#security-maintainability-limitations
+  UserWarning,
+127.0.0.1 - - [13/Dec/2022 10:47:12] "[32mPOST /firstIndex/0/2022年12月13日%2010:46:58/0/0/2/0/13.833333333333334/2.0/0.0/0.0/0.0/0.0/0.0/result HTTP/1.1[0m" 302 -
+127.0.0.1 - - [13/Dec/2022 10:47:12] "GET /result/1.0166666666666666/4.733333333333333/5.033333333333333/4.1/7.133333333333334/1/体調が悪くなるでしょう/0/2022年12月13日%2010:46:58/0/0/2/0/2.0/13.833333333333334/0.0/0.0/0.0/0.0/0.0 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 10:47:12] "GET /templates/image/sad.png HTTP/1.1" 200 -
+185.180.143.7 - - [13/Dec/2022 10:47:42] "GET / HTTP/1.1" 200 -
+/home/ec2-user/myenv/lib64/python3.7/site-packages/sklearn/base.py:338: UserWarning: Trying to unpickle estimator DecisionTreeClassifier from version 0.24.2 when using version 1.0.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/modules/model_persistence.html#security-maintainability-limitations
+  UserWarning,
+/home/ec2-user/myenv/lib64/python3.7/site-packages/sklearn/base.py:338: UserWarning: Trying to unpickle estimator RandomForestClassifier from version 0.24.2 when using version 1.0.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/modules/model_persistence.html#security-maintainability-limitations
+  UserWarning,
+127.0.0.1 - - [13/Dec/2022 10:48:04] "[32mPOST /firstIndex/0/2022年12月13日%2010:46:58/0/0/2/0/13.833333333333334/2.0/0.0/0.0/0.0/0.0/0.0/result HTTP/1.1[0m" 302 -
+127.0.0.1 - - [13/Dec/2022 10:48:04] "GET /result/1.0166666666666666/4.733333333333333/5.033333333333333/4.1/7.133333333333334/1/体調が悪くなるでしょう/0/2022年12月13日%2010:46:58/0/0/2/0/2.0/13.833333333333334/0.0/0.0/0.0/0.0/0.0 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 10:48:04] "[36mGET /templates/image/sad.png HTTP/1.1[0m" 304 -
+127.0.0.1 - - [13/Dec/2022 10:48:05] "GET /secondIndex/0/2022年12月13日%2010:46:58/0/0/2/0/2.0/13.833333333333334/0.0/0.0/0.0/0.0/0.0/1 HTTP/1.1" 200 -
+/home/ec2-user/myenv/lib64/python3.7/site-packages/sklearn/base.py:338: UserWarning: Trying to unpickle estimator DecisionTreeClassifier from version 0.24.2 when using version 1.0.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/modules/model_persistence.html#security-maintainability-limitations
+  UserWarning,
+/home/ec2-user/myenv/lib64/python3.7/site-packages/sklearn/base.py:338: UserWarning: Trying to unpickle estimator RandomForestClassifier from version 0.24.2 when using version 1.0.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/modules/model_persistence.html#security-maintainability-limitations
+  UserWarning,
+127.0.0.1 - - [13/Dec/2022 10:48:28] "[32mPOST /secondIndex/0/2022年12月13日%2010:46:58/0/0/2/0/2.0/13.833333333333334/0.0/0.0/0.0/0.0/0.0/result HTTP/1.1[0m" 302 -
+127.0.0.1 - - [13/Dec/2022 10:48:28] "GET /result/0.0/4.0/5.0/6.0/1.0/1/体調が悪くなるでしょう/0/2022年12月13日%2010:46:58/0/0/5/6/5.1/13.833333333333334/0.0/0.0/0.0/0.0/0.0 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 10:48:28] "[36mGET /templates/image/sad.png HTTP/1.1[0m" 304 -
+127.0.0.1 - - [13/Dec/2022 10:48:32] "GET /end/0.0/4.0/5.0/6.0/1.0/1/体調が悪くなるでしょう/0/2022年12月13日%2010:46:58/0/0/5/6/5.1/13.833333333333334/0.0/0.0/0.0/0.0/0.0 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 10:48:32] "[36mGET /templates/image/sad.png HTTP/1.1[0m" 304 -
+127.0.0.1 - - [13/Dec/2022 10:49:47] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 10:50:08] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 10:50:09] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 10:54:31] "[32mPOST / HTTP/1.1[0m" 302 -
+127.0.0.1 - - [13/Dec/2022 10:54:31] "GET /firstIndex/10/2022年12月13日%2010:54:31/1/0/9/0/14.833333333333334/8.0/7.0/0.0/0.75/0.5/4.5/1 HTTP/1.1" 200 -
+/home/ec2-user/myenv/lib64/python3.7/site-packages/sklearn/base.py:338: UserWarning: Trying to unpickle estimator DecisionTreeClassifier from version 0.24.2 when using version 1.0.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/modules/model_persistence.html#security-maintainability-limitations
+  UserWarning,
+/home/ec2-user/myenv/lib64/python3.7/site-packages/sklearn/base.py:338: UserWarning: Trying to unpickle estimator RandomForestClassifier from version 0.24.2 when using version 1.0.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/modules/model_persistence.html#security-maintainability-limitations
+  UserWarning,
+127.0.0.1 - - [13/Dec/2022 10:56:14] "[32mPOST /firstIndex/10/2022年12月13日%2010:54:31/1/0/9/0/14.833333333333334/8.0/7.0/0.0/0.75/0.5/4.5/result HTTP/1.1[0m" 302 -
+127.0.0.1 - - [13/Dec/2022 10:56:14] "GET /result/0.25/0.0/0.75/0.5/3.5/1/体調が悪くなるでしょう/10/2022年12月13日%2010:54:31/1/0/9/0/8.0/14.833333333333334/7.0/0.0/0.75/0.5/4.5 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 10:56:14] "GET /templates/image/sad.png HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 10:56:22] "GET /secondIndex/10/2022年12月13日%2010:54:31/1/0/9/0/8.0/14.833333333333334/7.0/0.0/0.75/0.5/4.5/1 HTTP/1.1" 200 -
+/home/ec2-user/myenv/lib64/python3.7/site-packages/sklearn/base.py:338: UserWarning: Trying to unpickle estimator DecisionTreeClassifier from version 0.24.2 when using version 1.0.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/modules/model_persistence.html#security-maintainability-limitations
+  UserWarning,
+/home/ec2-user/myenv/lib64/python3.7/site-packages/sklearn/base.py:338: UserWarning: Trying to unpickle estimator RandomForestClassifier from version 0.24.2 when using version 1.0.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/modules/model_persistence.html#security-maintainability-limitations
+  UserWarning,
+127.0.0.1 - - [13/Dec/2022 10:57:39] "[32mPOST /secondIndex/10/2022年12月13日%2010:54:31/1/0/9/0/8.0/14.833333333333334/7.0/0.0/0.75/0.5/4.5/result HTTP/1.1[0m" 302 -
+127.0.0.1 - - [13/Dec/2022 10:57:39] "GET /result/0.3333333333333333/0.0/1.0/0.6666666666666666/3.0/2/体調が維持されるでしょう/10/2022年12月13日%2010:54:31/1/0/9/30/8.5/14.833333333333334/7.0/0.0/0.75/0.5/4.5 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 10:57:39] "GET /templates/image/neutral.png HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 10:58:01] "GET /end/0.3333333333333333/0.0/1.0/0.6666666666666666/3.0/2/体調が維持されるでしょう/10/2022年12月13日%2010:54:31/1/0/9/30/8.5/14.833333333333334/7.0/0.0/0.75/0.5/4.5 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 10:58:01] "[36mGET /templates/image/neutral.png HTTP/1.1[0m" 304 -
+127.0.0.1 - - [13/Dec/2022 11:00:11] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 11:01:11] "[32mPOST / HTTP/1.1[0m" 302 -
+127.0.0.1 - - [13/Dec/2022 11:01:11] "GET /firstIndex/0/2022年12月13日%2011:01:11/0/0/8/0/12.816666666666666/8.0/0.0/0.0/1.0/0.0/2.0/1 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 11:04:15] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 11:09:20] "[33mGET /manager/text/list HTTP/1.1[0m" 404 -
+/home/ec2-user/myenv/lib64/python3.7/site-packages/sklearn/base.py:338: UserWarning: Trying to unpickle estimator DecisionTreeClassifier from version 0.24.2 when using version 1.0.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/modules/model_persistence.html#security-maintainability-limitations
+  UserWarning,
+/home/ec2-user/myenv/lib64/python3.7/site-packages/sklearn/base.py:338: UserWarning: Trying to unpickle estimator RandomForestClassifier from version 0.24.2 when using version 1.0.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/modules/model_persistence.html#security-maintainability-limitations
+  UserWarning,
+/home/ec2-user/myenv/lib64/python3.7/site-packages/sklearn/base.py:338: UserWarning: Trying to unpickle estimator DecisionTreeClassifier from version 0.24.2 when using version 1.0.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/modules/model_persistence.html#security-maintainability-limitations
+  UserWarning,
+/home/ec2-user/myenv/lib64/python3.7/site-packages/sklearn/base.py:338: UserWarning: Trying to unpickle estimator DecisionTreeClassifier from version 0.24.2 when using version 1.0.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/modules/model_persistence.html#security-maintainability-limitations
+  UserWarning,
+/home/ec2-user/myenv/lib64/python3.7/site-packages/sklearn/base.py:338: UserWarning: Trying to unpickle estimator DecisionTreeClassifier from version 0.24.2 when using version 1.0.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/modules/model_persistence.html#security-maintainability-limitations
+  UserWarning,
+/home/ec2-user/myenv/lib64/python3.7/site-packages/sklearn/base.py:338: UserWarning: Trying to unpickle estimator DecisionTreeClassifier from version 0.24.2 when using version 1.0.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/modules/model_persistence.html#security-maintainability-limitations
+  UserWarning,
+/home/ec2-user/myenv/lib64/python3.7/site-packages/sklearn/base.py:338: UserWarning: Trying to unpickle estimator RandomForestClassifier from version 0.24.2 when using version 1.0.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/modules/model_persistence.html#security-maintainability-limitations
+  UserWarning,
+/home/ec2-user/myenv/lib64/python3.7/site-packages/sklearn/base.py:338: UserWarning: Trying to unpickle estimator DecisionTreeClassifier from version 0.24.2 when using version 1.0.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/modules/model_persistence.html#security-maintainability-limitations
+  UserWarning,
+127.0.0.1 - - [13/Dec/2022 11:09:34] "[32mPOST /firstIndex/0/2022年12月13日%2011:01:11/0/0/8/0/12.816666666666666/8.0/0.0/0.0/1.0/0.0/2.0/result HTTP/1.1[0m" 302 -
+/home/ec2-user/myenv/lib64/python3.7/site-packages/sklearn/base.py:338: UserWarning: Trying to unpickle estimator RandomForestClassifier from version 0.24.2 when using version 1.0.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/modules/model_persistence.html#security-maintainability-limitations
+  UserWarning,
+127.0.0.1 - - [13/Dec/2022 11:09:34] "[32mPOST /firstIndex/0/2022年12月13日%2011:01:11/0/0/8/0/12.816666666666666/8.0/0.0/0.0/1.0/0.0/2.0/result HTTP/1.1[0m" 302 -
+127.0.0.1 - - [13/Dec/2022 11:09:34] "GET /result/1.0166666666666666/4.083333333333333/4.116666666666666/4.016666666666667/4.033333333333333/1/体調が悪くなるでしょう/0/2022年12月13日%2011:01:11/0/0/8/0/8.0/12.816666666666666/0.0/0.0/1.0/0.0/2.0 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 11:09:34] "[36mGET /templates/image/sad.png HTTP/1.1[0m" 304 -
+127.0.0.1 - - [13/Dec/2022 11:09:37] "GET /secondIndex/0/2022年12月13日%2011:01:11/0/0/8/0/8.0/12.816666666666666/0.0/0.0/1.0/0.0/2.0/1 HTTP/1.1" 200 -
+/home/ec2-user/myenv/lib64/python3.7/site-packages/sklearn/base.py:338: UserWarning: Trying to unpickle estimator DecisionTreeClassifier from version 0.24.2 when using version 1.0.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/modules/model_persistence.html#security-maintainability-limitations
+  UserWarning,
+/home/ec2-user/myenv/lib64/python3.7/site-packages/sklearn/base.py:338: UserWarning: Trying to unpickle estimator RandomForestClassifier from version 0.24.2 when using version 1.0.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/modules/model_persistence.html#security-maintainability-limitations
+  UserWarning,
+127.0.0.1 - - [13/Dec/2022 11:10:03] "[32mPOST /secondIndex/0/2022年12月13日%2011:01:11/0/0/8/0/8.0/12.816666666666666/0.0/0.0/1.0/0.0/2.0/result HTTP/1.1[0m" 302 -
+127.0.0.1 - - [13/Dec/2022 11:10:03] "GET /result/0.0/0.1/6.1/5.1/6.1/1/体調が悪くなるでしょう/0/2022年12月13日%2011:01:11/0/5/10/0/9.916666666666666/12.816666666666666/0.0/0.0/1.0/0.0/2.0 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 11:10:03] "[36mGET /templates/image/sad.png HTTP/1.1[0m" 304 -
+127.0.0.1 - - [13/Dec/2022 11:10:09] "GET /end/0.0/0.1/6.1/5.1/6.1/1/体調が悪くなるでしょう/0/2022年12月13日%2011:01:11/0/5/10/0/9.916666666666666/12.816666666666666/0.0/0.0/1.0/0.0/2.0 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 11:10:09] "[36mGET /templates/image/sad.png HTTP/1.1[0m" 304 -
+127.0.0.1 - - [13/Dec/2022 11:10:44] "GET /secondIndex/0/2022年12月13日%2011:01:11/0/0/8/0/8.0/12.816666666666666/0.0/0.0/1.0/0.0/2.0/1 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 11:10:50] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 11:11:15] "[32mPOST / HTTP/1.1[0m" 302 -
+127.0.0.1 - - [13/Dec/2022 11:11:15] "GET /firstIndex/0/2022年12月13日%2011:11:15/0/0/10/0/12.816666666666666/10.0/0.0/0.0/0.0/0.0/0.0/1 HTTP/1.1" 200 -
+ * Serving Flask app 'app'
+ * Debug mode: on
+Address already in use
+Port 8888 is in use by another program. Either identify and stop that program, or start the server with a different port.
+127.0.0.1 - - [13/Dec/2022 11:17:17] "[32mPOST / HTTP/1.1[0m" 302 -
+127.0.0.1 - - [13/Dec/2022 11:17:17] "GET /firstIndex/0/2022年12月13日%2011:17:17/0/0/10/0/12.816666666666666/10.0/0.0/0.0/0.0/0.0/0.0/1 HTTP/1.1" 200 -
+/home/ec2-user/myenv/lib64/python3.7/site-packages/sklearn/base.py:338: UserWarning: Trying to unpickle estimator DecisionTreeClassifier from version 0.24.2 when using version 1.0.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/modules/model_persistence.html#security-maintainability-limitations
+  UserWarning,
+/home/ec2-user/myenv/lib64/python3.7/site-packages/sklearn/base.py:338: UserWarning: Trying to unpickle estimator RandomForestClassifier from version 0.24.2 when using version 1.0.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/modules/model_persistence.html#security-maintainability-limitations
+  UserWarning,
+127.0.0.1 - - [13/Dec/2022 11:17:27] "[32mPOST /firstIndex/0/2022年12月13日%2011:17:17/0/0/10/0/12.816666666666666/10.0/0.0/0.0/0.0/0.0/0.0/result HTTP/1.1[0m" 302 -
+/home/ec2-user/myenv/lib64/python3.7/site-packages/sklearn/base.py:338: UserWarning: Trying to unpickle estimator DecisionTreeClassifier from version 0.24.2 when using version 1.0.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/modules/model_persistence.html#security-maintainability-limitations
+  UserWarning,
+/home/ec2-user/myenv/lib64/python3.7/site-packages/sklearn/base.py:338: UserWarning: Trying to unpickle estimator RandomForestClassifier from version 0.24.2 when using version 1.0.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/modules/model_persistence.html#security-maintainability-limitations
+  UserWarning,
+127.0.0.1 - - [13/Dec/2022 11:17:27] "[32mPOST /firstIndex/0/2022年12月13日%2011:17:17/0/0/10/0/12.816666666666666/10.0/0.0/0.0/0.0/0.0/0.0/result HTTP/1.1[0m" 302 -
+127.0.0.1 - - [13/Dec/2022 11:17:28] "GET /result/0.0/0.0/0.0/0.0/0.0/2/体調が維持されるでしょう/0/2022年12月13日%2011:17:17/0/0/10/0/10.0/12.816666666666666/0.0/0.0/0.0/0.0/0.0 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 11:17:28] "GET /templates/image/neutral.png HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 11:17:34] "GET /secondIndex/0/2022年12月13日%2011:17:17/0/0/10/0/10.0/12.816666666666666/0.0/0.0/0.0/0.0/0.0/1 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 11:19:10] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 11:19:27] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 11:20:42] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 11:21:32] "[32mPOST / HTTP/1.1[0m" 302 -
+127.0.0.1 - - [13/Dec/2022 11:21:32] "GET /firstIndex/0/2022年12月13日%2011:21:32/0/0/9/0/12.816666666666666/9.0/8.0/0.0/1.0/0.0/2.0/1 HTTP/1.1" 200 -
+/home/ec2-user/myenv/lib64/python3.7/site-packages/sklearn/base.py:338: UserWarning: Trying to unpickle estimator DecisionTreeClassifier from version 0.24.2 when using version 1.0.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/modules/model_persistence.html#security-maintainability-limitations
+  UserWarning,
+/home/ec2-user/myenv/lib64/python3.7/site-packages/sklearn/base.py:338: UserWarning: Trying to unpickle estimator RandomForestClassifier from version 0.24.2 when using version 1.0.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/modules/model_persistence.html#security-maintainability-limitations
+  UserWarning,
+127.0.0.1 - - [13/Dec/2022 11:22:19] "[32mPOST /firstIndex/0/2022年12月13日%2011:21:32/0/0/9/0/12.816666666666666/9.0/8.0/0.0/1.0/0.0/2.0/result HTTP/1.1[0m" 302 -
+127.0.0.1 - - [13/Dec/2022 11:22:20] "GET /result/0.0/0.0/0.5/0.5/1.0/2/体調が維持されるでしょう/0/2022年12月13日%2011:21:32/0/0/9/0/9.0/12.816666666666666/8.0/0.0/1.0/0.0/2.0 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 11:22:20] "GET /templates/image/neutral.png HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 11:22:21] "GET /secondIndex/0/2022年12月13日%2011:21:32/0/0/9/0/9.0/12.816666666666666/8.0/0.0/1.0/0.0/2.0/1 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 11:25:27] "GET /secondIndex/0/2022年12月13日%2011:21:32/0/0/9/0/9.0/12.816666666666666/8.0/0.0/1.0/0.0/2.0/1 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 11:25:28] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 11:25:30] "[32mPOST / HTTP/1.1[0m" 302 -
+127.0.0.1 - - [13/Dec/2022 11:25:30] "GET /firstIndex/0/2022年12月13日%2011:25:30/0/0/9/0/12.816666666666666/9.0/8.0/0.0/1.0/0.0/2.0/1 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 11:25:32] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 11:25:35] "[32mPOST / HTTP/1.1[0m" 302 -
+127.0.0.1 - - [13/Dec/2022 11:25:35] "GET /firstIndex/0/2022年12月13日%2011:25:35/0/0/9/0/12.816666666666666/9.0/8.0/0.0/1.0/0.0/2.0/1 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 11:25:36] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 11:25:37] "[32mPOST / HTTP/1.1[0m" 302 -
+127.0.0.1 - - [13/Dec/2022 11:25:37] "GET /firstIndex/0/2022年12月13日%2011:25:37/0/0/9/0/12.816666666666666/9.0/8.0/0.0/1.0/0.0/2.0/1 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 11:25:39] "GET / HTTP/1.1" 200 -
+ * Serving Flask app 'app'
+ * Debug mode: on
+Address already in use
+Port 8888 is in use by another program. Either identify and stop that program, or start the server with a different port.
+127.0.0.1 - - [13/Dec/2022 11:27:57] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 11:28:03] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 11:28:03] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 11:28:04] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 11:28:11] "[32mPOST / HTTP/1.1[0m" 302 -
+127.0.0.1 - - [13/Dec/2022 11:28:11] "GET /firstIndex/0/2022年12月13日%2011:28:11/0/0/0/0/12.816666666666666/0.0/0.0/0.0/0.0/0.0/0.0/1 HTTP/1.1" 200 -
+/home/ec2-user/myenv/lib64/python3.7/site-packages/sklearn/base.py:338: UserWarning: Trying to unpickle estimator DecisionTreeClassifier from version 0.24.2 when using version 1.0.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/modules/model_persistence.html#security-maintainability-limitations
+  UserWarning,
+/home/ec2-user/myenv/lib64/python3.7/site-packages/sklearn/base.py:338: UserWarning: Trying to unpickle estimator RandomForestClassifier from version 0.24.2 when using version 1.0.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/modules/model_persistence.html#security-maintainability-limitations
+  UserWarning,
+127.0.0.1 - - [13/Dec/2022 11:29:58] "[32mPOST /firstIndex/0/2022年12月13日%2011:28:11/0/0/0/0/12.816666666666666/0.0/0.0/0.0/0.0/0.0/0.0/result HTTP/1.1[0m" 302 -
+127.0.0.1 - - [13/Dec/2022 11:29:58] "GET /result/0.0/0.0/0.0/0.0/0.0/1/体調が悪くなるでしょう/0/2022年12月13日%2011:28:11/0/0/0/0/0.0/12.816666666666666/0.0/0.0/0.0/0.0/0.0 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 11:29:58] "GET /templates/image/sad.png HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 11:29:59] "GET /secondIndex/0/2022年12月13日%2011:28:11/0/0/0/0/0.0/12.816666666666666/0.0/0.0/0.0/0.0/0.0/1 HTTP/1.1" 200 -
+/home/ec2-user/myenv/lib64/python3.7/site-packages/sklearn/base.py:338: UserWarning: Trying to unpickle estimator DecisionTreeClassifier from version 0.24.2 when using version 1.0.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/modules/model_persistence.html#security-maintainability-limitations
+  UserWarning,
+/home/ec2-user/myenv/lib64/python3.7/site-packages/sklearn/base.py:338: UserWarning: Trying to unpickle estimator RandomForestClassifier from version 0.24.2 when using version 1.0.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/modules/model_persistence.html#security-maintainability-limitations
+  UserWarning,
+127.0.0.1 - - [13/Dec/2022 11:30:05] "[32mPOST /secondIndex/0/2022年12月13日%2011:28:11/0/0/0/0/0.0/12.816666666666666/0.0/0.0/0.0/0.0/0.0/result HTTP/1.1[0m" 302 -
+127.0.0.1 - - [13/Dec/2022 11:30:05] "GET /result/0.0/0.0/0.0/0.0/0.0/1/体調が悪くなるでしょう/0/2022年12月13日%2011:28:11/0/0/0/0/0.0/12.816666666666666/0.0/0.0/0.0/0.0/0.0 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 11:30:05] "[36mGET /templates/image/sad.png HTTP/1.1[0m" 304 -
+127.0.0.1 - - [13/Dec/2022 11:30:06] "GET /end/0.0/0.0/0.0/0.0/0.0/1/体調が悪くなるでしょう/0/2022年12月13日%2011:28:11/0/0/0/0/0.0/12.816666666666666/0.0/0.0/0.0/0.0/0.0 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 11:30:06] "[36mGET /templates/image/sad.png HTTP/1.1[0m" 304 -
+127.0.0.1 - - [13/Dec/2022 11:31:29] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 11:31:30] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 11:33:45] "[32mPOST / HTTP/1.1[0m" 302 -
+127.0.0.1 - - [13/Dec/2022 11:33:45] "GET /firstIndex/2/2022年12月13日%2011:33:45/2/0/11/0/14.816666666666666/9.0/9.0/0.0/1.0/0.25/5.0/1 HTTP/1.1" 200 -
+/home/ec2-user/myenv/lib64/python3.7/site-packages/sklearn/base.py:338: UserWarning: Trying to unpickle estimator DecisionTreeClassifier from version 0.24.2 when using version 1.0.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/modules/model_persistence.html#security-maintainability-limitations
+  UserWarning,
+/home/ec2-user/myenv/lib64/python3.7/site-packages/sklearn/base.py:338: UserWarning: Trying to unpickle estimator RandomForestClassifier from version 0.24.2 when using version 1.0.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/modules/model_persistence.html#security-maintainability-limitations
+  UserWarning,
+127.0.0.1 - - [13/Dec/2022 11:34:26] "[32mPOST /firstIndex/2/2022年12月13日%2011:33:45/2/0/11/0/14.816666666666666/9.0/9.0/0.0/1.0/0.25/5.0/result HTTP/1.1[0m" 302 -
+127.0.0.1 - - [13/Dec/2022 11:34:26] "GET /result/9.0/0.0/1.0/0.25/5.0/1/体調が悪くなるでしょう/2/2022年12月13日%2011:33:45/2/0/11/0/9.0/14.816666666666666/9.0/0.0/1.0/0.25/5.0 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 11:34:26] "GET /templates/image/sad.png HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 11:34:41] "GET /secondIndex/2/2022年12月13日%2011:33:45/2/0/11/0/9.0/14.816666666666666/9.0/0.0/1.0/0.25/5.0/1 HTTP/1.1" 200 -
+/home/ec2-user/myenv/lib64/python3.7/site-packages/sklearn/base.py:338: UserWarning: Trying to unpickle estimator DecisionTreeClassifier from version 0.24.2 when using version 1.0.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/modules/model_persistence.html#security-maintainability-limitations
+  UserWarning,
+/home/ec2-user/myenv/lib64/python3.7/site-packages/sklearn/base.py:338: UserWarning: Trying to unpickle estimator RandomForestClassifier from version 0.24.2 when using version 1.0.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/modules/model_persistence.html#security-maintainability-limitations
+  UserWarning,
+ * Detected change in '/home/ec2-user/m_thesis/app.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 204-523-579
+127.0.0.1 - - [13/Dec/2022 11:35:31] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 11:35:32] "POST / HTTP/1.1" 200 -
+/home/ec2-user/myenv/lib64/python3.7/site-packages/sklearn/base.py:338: UserWarning: Trying to unpickle estimator DecisionTreeClassifier from version 0.24.2 when using version 1.0.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/modules/model_persistence.html#security-maintainability-limitations
+  UserWarning,
+/home/ec2-user/myenv/lib64/python3.7/site-packages/sklearn/base.py:338: UserWarning: Trying to unpickle estimator RandomForestClassifier from version 0.24.2 when using version 1.0.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/modules/model_persistence.html#security-maintainability-limitations
+  UserWarning,
+127.0.0.1 - - [13/Dec/2022 11:35:38] "[32mPOST /secondIndex/2/2022年12月13日%2011:33:45/2/0/11/0/9.0/14.816666666666666/9.0/0.0/1.0/0.25/5.0/result HTTP/1.1[0m" 302 -
+127.0.0.1 - - [13/Dec/2022 11:35:38] "GET /result/9.0/0.0/1.0/0.25/4.0/2/体調が維持されるでしょう/2/2022年12月13日%2011:33:45/1/0/10/0/9.0/14.816666666666666/9.0/0.0/1.0/0.25/5.0 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 11:35:38] "GET /templates/image/neutral.png HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 11:35:41] "GET /end/9.0/0.0/1.0/0.25/4.0/2/体調が維持されるでしょう/2/2022年12月13日%2011:33:45/1/0/10/0/9.0/14.816666666666666/9.0/0.0/1.0/0.25/5.0 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 11:35:41] "[36mGET /templates/image/neutral.png HTTP/1.1[0m" 304 -
+127.0.0.1 - - [13/Dec/2022 11:35:48] "[33mGET /manager/html HTTP/1.1[0m" 404 -
+ * Detected change in '/home/ec2-user/m_thesis/app.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 204-523-579
+127.0.0.1 - - [13/Dec/2022 11:38:46] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 11:38:47] "[32mPOST / HTTP/1.1[0m" 302 -
+127.0.0.1 - - [13/Dec/2022 11:38:47] "GET /firstIndex/0/2022年12月13日%2020:38:47/0/0/0/0/3.666666666666668/0.0/0.0/0.0/0.0/0.0/0.0/1 HTTP/1.1" 200 -
+/home/ec2-user/myenv/lib64/python3.7/site-packages/sklearn/base.py:338: UserWarning: Trying to unpickle estimator DecisionTreeClassifier from version 0.24.2 when using version 1.0.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/modules/model_persistence.html#security-maintainability-limitations
+  UserWarning,
+/home/ec2-user/myenv/lib64/python3.7/site-packages/sklearn/base.py:338: UserWarning: Trying to unpickle estimator RandomForestClassifier from version 0.24.2 when using version 1.0.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/modules/model_persistence.html#security-maintainability-limitations
+  UserWarning,
+127.0.0.1 - - [13/Dec/2022 11:38:55] "[32mPOST /firstIndex/0/2022年12月13日%2020:38:47/0/0/0/0/3.666666666666668/0.0/0.0/0.0/0.0/0.0/0.0/result HTTP/1.1[0m" 302 -
+127.0.0.1 - - [13/Dec/2022 11:38:55] "GET /result/0.0/0.0/0.0/0.0/0.0/1/体調が悪くなるでしょう/0/2022年12月13日%2020:38:47/0/0/0/0/0.0/3.666666666666668/0.0/0.0/0.0/0.0/0.0 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 11:38:55] "[36mGET /templates/image/sad.png HTTP/1.1[0m" 304 -
+127.0.0.1 - - [13/Dec/2022 11:38:56] "GET /secondIndex/0/2022年12月13日%2020:38:47/0/0/0/0/0.0/3.666666666666668/0.0/0.0/0.0/0.0/0.0/1 HTTP/1.1" 200 -
+/home/ec2-user/myenv/lib64/python3.7/site-packages/sklearn/base.py:338: UserWarning: Trying to unpickle estimator DecisionTreeClassifier from version 0.24.2 when using version 1.0.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/modules/model_persistence.html#security-maintainability-limitations
+  UserWarning,
+/home/ec2-user/myenv/lib64/python3.7/site-packages/sklearn/base.py:338: UserWarning: Trying to unpickle estimator RandomForestClassifier from version 0.24.2 when using version 1.0.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/modules/model_persistence.html#security-maintainability-limitations
+  UserWarning,
+127.0.0.1 - - [13/Dec/2022 11:39:04] "[32mPOST /secondIndex/0/2022年12月13日%2020:38:47/0/0/0/0/0.0/3.666666666666668/0.0/0.0/0.0/0.0/0.0/result HTTP/1.1[0m" 302 -
+127.0.0.1 - - [13/Dec/2022 11:39:04] "GET /result/0.0/0.0/0.0/0.0/0.0/1/体調が悪くなるでしょう/0/2022年12月13日%2020:38:47/0/0/0/0/0.0/3.666666666666668/0.0/0.0/0.0/0.0/0.0 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 11:39:04] "[36mGET /templates/image/sad.png HTTP/1.1[0m" 304 -
+127.0.0.1 - - [13/Dec/2022 11:39:09] "GET /end/0.0/0.0/0.0/0.0/0.0/1/体調が悪くなるでしょう/0/2022年12月13日%2020:38:47/0/0/0/0/0.0/3.666666666666668/0.0/0.0/0.0/0.0/0.0 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 11:39:09] "[36mGET /templates/image/sad.png HTTP/1.1[0m" 304 -
