@@ -342,7 +342,7 @@ def root():
             return render_template('id.html', idForm=idForm)
         else:
             id,sleepHourStart,sleepMinStart,sleepHourEnd,sleepMinEnd,goingoutLengthPre,cookingLengthPre,eatingLengthPre,bathingLengthPre,otherLengthPre = getSleepForm()
-            dtNow = datetime.datetime.now()+datetime.timedelta(hours=9)
+            dtNow = datetime.datetime.now() + datetime.timedelta(hours=9)
             day = dtNow.strftime('%Y年%m月%d日 %H:%M:%S')
             if sleepHourStart >= 18:
                 sleepingLength = (24 - (sleepHourStart + sleepMinStart/60)) + (sleepHourEnd + sleepMinEnd/60)
