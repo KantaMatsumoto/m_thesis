@@ -29,7 +29,6 @@ features = ['RRiM','RRiS','LP_all',
 def saveFile(id, day, goingoutLength,cookingLength,eatingLength,bathingLength,otherLength, pred, 
         sleepHourStart, sleepMinStart, sleepHourEnd, sleepMinEnd,sleepingLength, timeLeft,
         goingoutLengthPre,cookingLengthPre,eatingLengthPre,bathingLengthPre,otherLengthPre,fileState):#fileにdataframeを保存する用
-    dtNow = datetime.datetime.now()
     try:
         for p in pred:
             for p2 in p:
