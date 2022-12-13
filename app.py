@@ -10,6 +10,7 @@ import numpy as np
 from statistics import mean
 import datetime
 
+
 app = Flask(__name__, static_folder='./templates/') # Flask動かす時のおまじない。
 #app.config.from_object(__name__)
 app.config['SECRET_KEY'] = 'zJe09C5c3tMf5FnNL09C5d6SAzZoY'
@@ -25,21 +26,29 @@ features = ['RRiM','RRiS','LP_all',
 ]      
 
 
-def saveFile(goingoutLength,cookingLength,eatingLength,bathingLength,otherLength, pred, sendStatus ,idDay, 
-        sleepHourStart, sleepMinStart, sleepHourEnd, sleepMinEnd,sleepingLength, timeLeft,fileState):#fileにdataframeを保存する用
+def saveFile(id, day, goingoutLength,cookingLength,eatingLength,bathingLength,otherLength, pred, 
+        sleepHourStart, sleepMinStart, sleepHourEnd, sleepMinEnd,sleepingLength, timeLeft,
+        goingoutLengthPre,cookingLengthPre,eatingLengthPre,bathingLengthPre,otherLengthPre,fileState):#fileにdataframeを保存する用
     dtNow = datetime.datetime.now()
-    featureTime = ['idDay', 'Going-out','Cooking', 'Eating', 'Bathing',  'Other','Sleeping','pred', 'timeLeft']    
-    data = [[idDay,goingoutLength,cookingLength,eatingLength,bathingLength,otherLength,sleepingLength,pred,timeLeft]]
+    try:
+        for p in pred:
+            for p2 in p:
+                pred=p2
+    except:
+        pass
+    featureTime = ['Date','Going-out','Cooking', 'Eating', 'Bathing',  'Other','Sleeping','pred', 'timeLeft','sleepStart', 'sleepEnd',
+    'goingoutLengthPre','cookingLengthPre','eatingLengthPre','bathingLengthPre','otherLengthPre']    
+    data = [[day,goingoutLength,cookingLength,eatingLength,bathingLength,otherLength,sleepingLength,pred,timeLeft, str(sleepHourStart)+':'+ str(sleepMinStart), str(sleepHourEnd)+':'+ str(sleepMinEnd),
+        goingoutLengthPre,cookingLengthPre,eatingLengthPre,bathingLengthPre,otherLengthPre]]
+    df = pd.DataFrame(data,columns=featureTime)
     if fileState ==1:
-        df = pd.DataFrame(data,columns=featureTime)
-        f = open('result/' + idDay + "_1回目" + '.csv', 'w')
-        df.to_csv(f)
-        f.close()
+        csv = pd.read_csv('result/' + str(id) + "_1回目" + '.csv')
+        A=pd.concat([csv, df], axis=0)
+        A.to_csv('result/' + str(id) + "_1回目"+ '.csv',index=False)
     else:
-        df = pd.DataFrame(data,columns=featureTime)
-        f = open('result/' + idDay+ "_2回目" + '.csv', 'w')
-        df.to_csv(f)
-        f.close()
+        csv = pd.read_csv('result/' + str(id) + "_2回目" + '.csv')
+        A=pd.concat([csv, df], axis=0)
+        A.to_csv('result/' + str(id) + "_2回目" + '.csv',index=False)
 
 def makePrefer():#mixed_indicatorの設定（定数）
     lpPrefer = pd.DataFrame(
@@ -146,13 +155,23 @@ def stressStatus(label):
     else: 
         return "Error"
 
-def getForm(sleepingLength, goingoutLength, cookingLength, eatingLength, bathingLength, otherLength):
+def getForm(sleepingLength, goingoutLength, cookingLength, eatingLength, bathingLength, otherLength,numberTimes):
     timeToCount = 60*4
     sleepingLength = float(sleepingLength)
     Time = [sleepingLength, goingoutLength, cookingLength, eatingLength, bathingLength, otherLength]
     timeCount = [goingoutLength * timeToCount, cookingLength * timeToCount, eatingLength * timeToCount, bathingLength * timeToCount, sleepingLength * timeToCount, otherLength * timeToCount]#特徴量が15秒に1回周期のため。
     xTest= makeFeatures(timeCount)
     pred = predictStress(xTest)
+    if pred==1:
+        if numberTimes == 2:
+            pred = 2
+        if numberTimes >= 3:
+            pred = 3
+    elif pred==2:
+        if numberTimes >= 2:
+            pred = 3
+    else:
+        pass
     if sleepingLength < 6:
         pred = 1
     status = stressStatus(int(pred))
@@ -163,8 +182,23 @@ def getSleepForm():
     sleepHourStart  = int(request.form["sleepHourStart"])
     sleepMinStart = int(request.form["sleepMinStart"])            
     sleepHourEnd  = int(request.form["sleepHourEnd"])            
-    sleepMinEnd = int(request.form["sleepMinEnd"])    
-    return id,sleepHourStart,sleepMinStart,sleepHourEnd,sleepMinEnd
+    sleepMinEnd = int(request.form["sleepMinEnd"])
+    goingoutHour = float(request.form["goingoutHour"])                       
+    cookingHour  = float(request.form["cookingHour"])
+    eatingHour = float(request.form["eatingHour"])            
+    bathingHour  = float(request.form["bathingHour"])            
+    otherHour  = float(request.form["otherHour"])
+    goingoutMin = float(request.form["goingoutMin"])                       
+    cookingMin  = float(request.form["cookingMin"])
+    eatingMin = float(request.form["eatingMin"])            
+    bathingMin  = float(request.form["bathingMin"])            
+    otherMin  = float(request.form["otherMin"])
+    goingoutLength = goingoutHour+goingoutMin/60
+    cookingLength = cookingHour+cookingMin/60
+    eatingLength = eatingHour+eatingMin/60
+    bathingLength = bathingHour+bathingMin/60
+    otherLength = otherHour+otherMin/60    
+    return id,sleepHourStart,sleepMinStart,sleepHourEnd,sleepMinEnd,goingoutLength,cookingLength,eatingLength,bathingLength,otherLength
 
 class sleepIdForm(Form):
     id = IntegerField("IDを入力してください",
@@ -180,6 +214,36 @@ class sleepIdForm(Form):
                     [validators.InputRequired("この項目は入力必須です"),
                     validators.NumberRange(min=0, max=24)])
     sleepMinEnd = IntegerField("分",
+                    [validators.InputRequired("この項目は入力必須です"),
+                    validators.NumberRange(min=0, max=59)])
+    goingoutHour = IntegerField("外出時間",
+                    [validators.InputRequired("この項目は入力必須です"),
+                    validators.NumberRange(min=0, max=12)])
+    goingoutMin = IntegerField("分",
+                    [validators.InputRequired("この項目は入力必須です"),
+                    validators.NumberRange(min=0, max=59)])
+    cookingHour  = IntegerField("料理時間",
+                    [validators.InputRequired("この項目は入力必須です"),
+                    validators.NumberRange(min=0, max=10)])
+    cookingMin = IntegerField("分",
+                    [validators.InputRequired("この項目は入力必須です"),
+                    validators.NumberRange(min=0, max=59)])
+    eatingHour = IntegerField("食事時間",
+                    [validators.InputRequired("この項目は入力必須です"),
+                    validators.NumberRange(min=0, max=10)])
+    eatingMin = IntegerField("分",
+                    [validators.InputRequired("この項目は入力必須です"),
+                    validators.NumberRange(min=0, max=59)])
+    bathingHour  = IntegerField("入浴時間",
+                    [validators.InputRequired("この項目は入力必須です"),
+                    validators.NumberRange(min=0, max=10)])
+    bathingMin = IntegerField("分",
+                    [validators.InputRequired("この項目は入力必須です"),
+                    validators.NumberRange(min=0, max=59)])
+    otherHour  = IntegerField("その他時間",
+                    [validators.InputRequired("この項目は入力必須です"),
+                    validators.NumberRange(min=0, max=12)])
+    otherMin = IntegerField("分",
                     [validators.InputRequired("この項目は入力必須です"),
                     validators.NumberRange(min=0, max=59)])
     accept = BooleanField("内容確認：",[validators.InputRequired("この項目は入力必須です")])
@@ -221,6 +285,9 @@ class activityFormIndex(Form):
     submit = SubmitField("送信")
 
 class activityFormIndex2(Form):
+    numberTimes = IntegerField("回数",
+                    [validators.InputRequired("この項目は入力必須です"),
+                    validators.NumberRange(min=0, max=50)])
     goingoutHour = IntegerField("外出時間",
                     [validators.InputRequired("この項目は入力必須です"),
                     validators.NumberRange(min=0, max=12)])
@@ -251,10 +318,18 @@ class activityFormIndex2(Form):
     otherMin = IntegerField("分",
                     [validators.InputRequired("この項目は入力必須です"),
                     validators.NumberRange(min=0, max=59)])
-    sleepingHour = IntegerField("睡眠時間",
-                    [validators.Optional(),validators.NumberRange(min=0, max=12)])
-    sleepingMin = IntegerField("分",
-                    [validators.Optional(),validators.NumberRange(min=0, max=59)])
+    sleepHourStart  = IntegerField("入眠時間",
+                    [validators.Optional(),
+                    validators.NumberRange(min=0, max=24)])
+    sleepMinStart = IntegerField("分",
+                    [validators.Optional(),
+                    validators.NumberRange(min=0, max=59)])
+    sleepHourEnd  = IntegerField("起床時間",
+                    [validators.Optional(),
+                    validators.NumberRange(min=0, max=24)])
+    sleepMinEnd = IntegerField("分",
+                    [validators.Optional(),
+                    validators.NumberRange(min=0, max=59)])
     # html側で表示するsubmitボタンの表示
     submit = SubmitField("送信")
 
@@ -266,10 +341,10 @@ def root():
             flash("全て入力する必要があります。")
             return render_template('id.html', idForm=idForm)
         else:
-            id,sleepHourStart,sleepMinStart,sleepHourEnd,sleepMinEnd = getSleepForm()
+            id,sleepHourStart,sleepMinStart,sleepHourEnd,sleepMinEnd,goingoutLengthPre,cookingLengthPre,eatingLengthPre,bathingLengthPre,otherLengthPre = getSleepForm()
+
             dtNow = datetime.datetime.now()
             day = dtNow.strftime('%Y年%m月%d日 %H:%M:%S')
-            idDay=str(id)+'_'+str(day)
             if sleepHourStart >= 18:
                 sleepingLength = (24 - (sleepHourStart + sleepMinStart/60)) + (sleepHourEnd + sleepMinEnd/60)
                 #18時睡眠の場合、今日の残り睡眠時間（24:00-18:00）＋明日の睡眠時間
@@ -279,19 +354,19 @@ def root():
                 #2時睡眠の場合、今日の睡眠時間-明日の起床時間
                 timeLeft=(24-(int(dtNow.hour)+int(dtNow.hour)/60))+(sleepHourStart + sleepMinStart/60)
                 #今日の残り時間（24:00-今の時間）+次の日の睡眠開始時間
-
-            return redirect(url_for('firstIndex',idDay=idDay, sleepHourStart=sleepHourStart, sleepMinStart=sleepMinStart,
-                sleepHourEnd=sleepHourEnd,sleepMinEnd=sleepMinEnd,sleepingLength=sleepingLength,timeLeft=timeLeft,dummy=1))
+            return redirect(url_for('firstIndex',id=id,day=day, sleepHourStart=sleepHourStart, sleepMinStart=sleepMinStart,
+                sleepHourEnd=sleepHourEnd,sleepMinEnd=sleepMinEnd,sleepingLength=sleepingLength,timeLeft=timeLeft, goingoutLengthPre=goingoutLengthPre,
+                cookingLengthPre=cookingLengthPre,eatingLengthPre=eatingLengthPre,bathingLengthPre=bathingLengthPre,otherLengthPre=otherLengthPre,dummy=1))
     elif request.method == 'GET':
         return render_template('id.html', idForm=idForm)
 
-@app.route('/firstIndex/<idDay>/<sleepHourStart>/<sleepMinStart>/<sleepHourEnd>/<sleepMinEnd>/<sleepingLength>/<timeLeft>/<dummy>', methods = ['GET', 'POST'])# どのページで実行する関数か設定
-def firstIndex(idDay,sleepHourStart, sleepMinStart,sleepHourEnd,sleepMinEnd,sleepingLength,timeLeft,dummy):
+@app.route('/firstIndex/<id>/<day>/<sleepHourStart>/<sleepMinStart>/<sleepHourEnd>/<sleepMinEnd>/<timeLeft>/<sleepingLength>/<goingoutLengthPre>/<cookingLengthPre>/<eatingLengthPre>/<bathingLengthPre>/<otherLengthPre>/<dummy>', methods = ['GET', 'POST'])# どのページで実行する関数か設定
+def firstIndex(id,day,sleepHourStart, sleepMinStart,sleepHourEnd,sleepMinEnd,sleepingLength,timeLeft,goingoutLengthPre,cookingLengthPre,eatingLengthPre,bathingLengthPre,otherLengthPre,dummy):
     form = activityFormIndex(request.form)
     if request.method == 'POST':
         if form.validate() == False:
             flash("全て入力する必要があります。")
-            return render_template('firstIndex.html', form=form, idDay=idDay)
+            return render_template('firstIndex.html', form=form, id=id,day=day)
         else:
             goingoutHour = float(request.form["goingoutHour"])                       
             cookingHour  = float(request.form["cookingHour"])
@@ -308,22 +383,26 @@ def firstIndex(idDay,sleepHourStart, sleepMinStart,sleepHourEnd,sleepMinEnd,slee
             eatingLength = eatingHour+eatingMin/60
             bathingLength = bathingHour+bathingMin/60
             otherLength = otherHour+otherMin/60
-            Time,xTest,pred,sendStatus = getForm(sleepingLength,goingoutLength,cookingLength,eatingLength,bathingLength,otherLength)
-            saveFile(goingoutLength,cookingLength,eatingLength,bathingLength,otherLength, int(pred), sendStatus ,idDay, sleepHourStart, sleepMinStart, sleepHourEnd, sleepMinEnd,sleepingLength, timeLeft,fileState=1)
-            return redirect(url_for('result', goingoutLength=goingoutLength,cookingLength=cookingLength,eatingLength=eatingLength,
-            bathingLength=bathingLength,otherLength=otherLength, pred=int(pred), sendStatus=sendStatus ,idDay=idDay, 
-            sleepHourStart=sleepHourStart, sleepMinStart=sleepMinStart, sleepHourEnd=sleepHourEnd, sleepMinEnd=sleepMinEnd,sleepingLength=sleepingLength, timeLeft=timeLeft))
+            Time,xTest,pred,sendStatus = getForm(sleepingLength,goingoutLength,cookingLength,eatingLength,bathingLength,otherLength,numberTimes=0)
+            saveFile(id, day, goingoutLength,cookingLength,eatingLength,bathingLength,otherLength, pred, 
+                    sleepHourStart, sleepMinStart, sleepHourEnd, sleepMinEnd,sleepingLength, timeLeft,
+                    goingoutLengthPre,cookingLengthPre,eatingLengthPre,bathingLengthPre,otherLengthPre,fileState=1)
+        return redirect(url_for('result', goingoutLength=goingoutLength,cookingLength=cookingLength,eatingLength=eatingLength,
+                bathingLength=bathingLength,otherLength=otherLength, pred=int(pred), sendStatus=sendStatus ,id=id,day=day, 
+                sleepHourStart=sleepHourStart, sleepMinStart=sleepMinStart, sleepHourEnd=sleepHourEnd, sleepMinEnd=sleepMinEnd,sleepingLength=sleepingLength, timeLeft=timeLeft,
+                goingoutLengthPre=goingoutLengthPre,cookingLengthPre=cookingLengthPre,eatingLengthPre=eatingLengthPre,bathingLengthPre=bathingLengthPre,otherLengthPre=otherLengthPre))
     elif request.method == 'GET':
-        return render_template('firstIndex.html', form=form, idDay=idDay, sleepHourStart=sleepHourStart, 
-                sleepMinStart=sleepMinStart, sleepHourEnd=sleepHourEnd, sleepMinEnd=sleepMinEnd,sleepingLength=sleepingLength,timeLeft=timeLeft)#id=id,sleepHourStart=sleepHourStart,sleepMinStart=sleepMinStart,sleepHourEnd=sleepHourEnd,sleepMinEnd=sleepMinEnd,)
+        return render_template('firstIndex.html', form=form, id=id,day=day, sleepHourStart=sleepHourStart, 
+                sleepMinStart=sleepMinStart, sleepHourEnd=sleepHourEnd, sleepMinEnd=sleepMinEnd,sleepingLength=sleepingLength,timeLeft=timeLeft,
+                goingoutLengthPre=goingoutLengthPre,cookingLengthPre=cookingLengthPre,eatingLengthPre=eatingLengthPre,bathingLengthPre=bathingLengthPre,otherLengthPre=otherLengthPre)#id=id,sleepHourStart=sleepHourStart,sleepMinStart=sleepMinStart,sleepHourEnd=sleepHourEnd,sleepMinEnd=sleepMinEnd,)
 
-@app.route('/secondIndex/<idDay>/<sleepHourStart>/<sleepMinStart>/<sleepHourEnd>/<sleepMinEnd>/<sleepingLength>/<timeLeft>/<dummy>', methods = ['GET', 'POST'])
-def secondIndex(idDay,sleepHourStart, sleepMinStart,sleepHourEnd,sleepMinEnd,sleepingLength,timeLeft,dummy):    
+@app.route('/secondIndex/<id>/<day>/<sleepHourStart>/<sleepMinStart>/<sleepHourEnd>/<sleepMinEnd>/<sleepingLength>/<timeLeft>/<goingoutLengthPre>/<cookingLengthPre>/<eatingLengthPre>/<bathingLengthPre>/<otherLengthPre>/<dummy>', methods = ['GET', 'POST'])
+def secondIndex(id,day,sleepHourStart, sleepMinStart,sleepHourEnd,sleepMinEnd,sleepingLength,timeLeft,goingoutLengthPre,cookingLengthPre,eatingLengthPre,bathingLengthPre,otherLengthPre,dummy):    
     form = activityFormIndex2(request.form)
     if request.method == 'POST':
         if form.validate() == False:
             flash("全て入力する必要があります。")
-            return render_template('secondIndex.html', form=form, idDay=idDay)
+            return render_template('secondIndex.html', form=form, id=id,day=day)
         else:
             goingoutHour = float(request.form["goingoutHour"])                       
             cookingHour  = float(request.form["cookingHour"])
@@ -342,33 +421,46 @@ def secondIndex(idDay,sleepHourStart, sleepMinStart,sleepHourEnd,sleepMinEnd,sle
             bathingLength = bathingHour+bathingMin/60
             otherLength = otherHour+otherMin/60
 
-            sleepingHour=request.form["sleepingHour"]
-            sleepingMin = request.form["sleepingMin"]
-            if bool(sleepingHour)==True and bool(sleepingMin)==True:
-                sleepingLength = int(sleepingHour) + int(sleepingMin)/60
-            Time,xTest,pred,sendStatus = getForm(sleepingLength,goingoutLength,cookingLength,eatingLength,bathingLength,otherLength)
+
+            sleepHourStart  = int(request.form["sleepHourStart"])
+            sleepMinStart = int(request.form["sleepMinStart"])            
+            sleepHourEnd  = int(request.form["sleepHourEnd"])            
+            sleepMinEnd = int(request.form["sleepMinEnd"])
+
+            if sleepHourStart >= 18:
+                sleepingLength = (24 - (sleepHourStart + sleepMinStart/60)) + (sleepHourEnd + sleepMinEnd/60)
+            else:
+                sleepingLength = (sleepHourEnd + sleepMinEnd/60) - (sleepHourStart + sleepMinStart/60)
+                #2時睡眠の場合、今日の睡眠時間-明日の起床時間
+            numberTimes=int(request.form["numberTimes"])    
+            Time,xTest,pred,sendStatus = getForm(sleepingLength,goingoutLength,cookingLength,eatingLength,bathingLength,otherLength,numberTimes)
             
             return redirect(url_for('result', goingoutLength=goingoutLength,cookingLength=cookingLength,eatingLength=eatingLength,
-            bathingLength=bathingLength,otherLength=otherLength, pred=int(pred), sendStatus=sendStatus ,idDay=idDay, 
-            sleepHourStart=sleepHourStart, sleepMinStart=sleepMinStart, sleepHourEnd=sleepHourEnd, sleepMinEnd=sleepMinEnd,sleepingLength=sleepingLength, timeLeft=timeLeft))
+            bathingLength=bathingLength,otherLength=otherLength, pred=int(pred), sendStatus=sendStatus ,id=id,day=day, 
+            sleepHourStart=sleepHourStart, sleepMinStart=sleepMinStart, sleepHourEnd=sleepHourEnd, sleepMinEnd=sleepMinEnd,sleepingLength=sleepingLength, timeLeft=timeLeft,
+            goingoutLengthPre=goingoutLengthPre,cookingLengthPre=cookingLengthPre,eatingLengthPre=eatingLengthPre,bathingLengthPre=bathingLengthPre,otherLengthPre=otherLengthPre))
     elif request.method == 'GET':
-        return render_template('secondIndex.html', form=form, idDay=idDay, sleepHourStart=sleepHourStart, 
-                sleepMinStart=sleepMinStart, sleepHourEnd=sleepHourEnd, sleepMinEnd=sleepMinEnd,sleepingLength=sleepingLength,timeLeft=timeLeft)#id=id,sleepHourStart=sleepHourStart,sleepMinStart=sleepMinStart,sleepHourEnd=sleepHourEnd,sleepMinEnd=sleepMinEnd,)
+        return render_template('secondIndex.html', form=form, id=id,day=day, sleepHourStart=sleepHourStart, 
+                sleepMinStart=sleepMinStart, sleepHourEnd=sleepHourEnd, sleepMinEnd=sleepMinEnd,sleepingLength=sleepingLength,timeLeft=timeLeft, 
+                goingoutLengthPre=goingoutLengthPre,cookingLengthPre=cookingLengthPre,eatingLengthPre=eatingLengthPre,bathingLengthPre=bathingLengthPre,otherLengthPre=otherLengthPre)#id=id,sleepHourStart=sleepHourStart,sleepMinStart=sleepMinStart,sleepHourEnd=sleepHourEnd,sleepMinEnd=sleepMinEnd,)
 
-@app.route('/result/<goingoutLength>/<cookingLength>/<eatingLength>/<bathingLength>/<otherLength>/<pred>/<sendStatus>/<idDay>/<sleepHourStart>/<sleepMinStart>/<sleepHourEnd>/<sleepMinEnd>/<sleepingLength>/<timeLeft>', methods = ['GET', 'POST'])
-def result(goingoutLength,cookingLength,eatingLength,bathingLength,otherLength, pred, sendStatus, idDay, sleepHourStart, sleepMinStart, sleepHourEnd, sleepMinEnd,sleepingLength, timeLeft):
+@app.route('/result/<goingoutLength>/<cookingLength>/<eatingLength>/<bathingLength>/<otherLength>/<pred>/<sendStatus>/<id>/<day>/<sleepHourStart>/<sleepMinStart>/<sleepHourEnd>/<sleepMinEnd>/<sleepingLength>/<timeLeft>/<goingoutLengthPre>/<cookingLengthPre>/<eatingLengthPre>/<bathingLengthPre>/<otherLengthPre>', methods = ['GET', 'POST'])
+def result(goingoutLength,cookingLength,eatingLength,bathingLength,otherLength, pred, sendStatus, id,day, sleepHourStart, sleepMinStart, sleepHourEnd, sleepMinEnd,sleepingLength, timeLeft,goingoutLengthPre,cookingLengthPre,eatingLengthPre,bathingLengthPre,otherLengthPre):
     pred=int(pred)
     return render_template('result.html',goingoutLength=goingoutLength,cookingLength=cookingLength,eatingLength=eatingLength,
-            bathingLength=bathingLength,otherLength=otherLength, pred=int(pred), sendStatus=sendStatus ,idDay=idDay, 
-            sleepHourStart=sleepHourStart, sleepMinStart=sleepMinStart, sleepHourEnd=sleepHourEnd, sleepMinEnd=sleepMinEnd,sleepingLength=sleepingLength, timeLeft=timeLeft)
+            bathingLength=bathingLength,otherLength=otherLength, pred=int(pred), sendStatus=sendStatus ,id=id,day=day,
+            sleepHourStart=sleepHourStart, sleepMinStart=sleepMinStart, sleepHourEnd=sleepHourEnd, sleepMinEnd=sleepMinEnd,sleepingLength=sleepingLength, timeLeft=timeLeft,
+            goingoutLengthPre=goingoutLengthPre,cookingLengthPre=cookingLengthPre,eatingLengthPre=eatingLengthPre,bathingLengthPre=bathingLengthPre,otherLengthPre=otherLengthPre)
 
-@app.route('/end/<goingoutLength>/<cookingLength>/<eatingLength>/<bathingLength>/<otherLength>/<pred>/<sendStatus>/<idDay>/<sleepHourStart>/<sleepMinStart>/<sleepHourEnd>/<sleepMinEnd>/<sleepingLength>/<timeLeft>', methods = ['GET', 'POST'])
-def end(goingoutLength,cookingLength,eatingLength,bathingLength,otherLength, pred, sendStatus, idDay, sleepHourStart, sleepMinStart, sleepHourEnd, sleepMinEnd,sleepingLength, timeLeft):
-    saveFile(goingoutLength,cookingLength,eatingLength,bathingLength,otherLength, 
-        int(pred), sendStatus ,idDay, sleepHourStart, sleepMinStart, sleepHourEnd, sleepMinEnd,sleepingLength, timeLeft,fileState=2)
+@app.route('/end/<goingoutLength>/<cookingLength>/<eatingLength>/<bathingLength>/<otherLength>/<pred>/<sendStatus>/<id>/<day>/<sleepHourStart>/<sleepMinStart>/<sleepHourEnd>/<sleepMinEnd>/<sleepingLength>/<timeLeft>/<goingoutLengthPre>/<cookingLengthPre>/<eatingLengthPre>/<bathingLengthPre>/<otherLengthPre>', methods = ['GET', 'POST'])
+def end(goingoutLength,cookingLength,eatingLength,bathingLength,otherLength, pred, sendStatus, id,day, sleepHourStart, sleepMinStart, sleepHourEnd, sleepMinEnd,sleepingLength, timeLeft,goingoutLengthPre,cookingLengthPre,eatingLengthPre,bathingLengthPre,otherLengthPre):
+    saveFile(id, day, goingoutLength,cookingLength,eatingLength,bathingLength,otherLength, pred, 
+            sleepHourStart, sleepMinStart, sleepHourEnd, sleepMinEnd,sleepingLength, timeLeft,
+            goingoutLengthPre,cookingLengthPre,eatingLengthPre,bathingLengthPre,otherLengthPre,fileState=2)
     return render_template('end.html',goingoutLength=goingoutLength,cookingLength=cookingLength,eatingLength=eatingLength,
-            bathingLength=bathingLength,otherLength=otherLength, pred=int(pred), sendStatus=sendStatus ,idDay=idDay, 
-            sleepHourStart=sleepHourStart, sleepMinStart=sleepMinStart, sleepHourEnd=sleepHourEnd, sleepMinEnd=sleepMinEnd,sleepingLength=sleepingLength, timeLeft=timeLeft)
+            bathingLength=bathingLength,otherLength=otherLength, pred=int(pred), sendStatus=sendStatus ,id=id,day=day,
+            sleepHourStart=sleepHourStart, sleepMinStart=sleepMinStart, sleepHourEnd=sleepHourEnd, sleepMinEnd=sleepMinEnd,sleepingLength=sleepingLength, timeLeft=timeLeft,
+            goingoutLengthPre=goingoutLengthPre,cookingLengthPre=cookingLengthPre,eatingLengthPre=eatingLengthPre,bathingLengthPre=bathingLengthPre,otherLengthPre=otherLengthPre)
 
 if __name__ == "__main__": # 実行されたら
     app.run(debug=True, host='0.0.0.0', port=8888, threaded=True)# デバッグモード、localhost:8888 のマルチスレッドで実行

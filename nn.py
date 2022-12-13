@@ -228,7 +228,7 @@ def RandomForestClassifier_optuna(up_mode, down_mode, bagging_trials_num, n_tria
         # 学習済みモデルの保存
         joblib.dump(optimised_rf, "nn.pkl", compress=True)
 
-        filename = 'nn.sav'
+        filename = 'nn_men.sav'
         pickle.dump(optimised_rf, open(filename, 'wb'))
 
                 
@@ -266,7 +266,7 @@ classification=[]
 #全ての特徴量　oputuna up_sample
 #def RandomForestClassifier_optuna(mode = ノーマル、アップサンプリング，ダウンサンプリング, n_trials_num = 整数,feature_drop=特徴量):
 
-up_mode= 1
+up_mode= 0
 down_mode = 1
 bagging_trials_num = 10
 n_trials_num = 0

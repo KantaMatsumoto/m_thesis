@@ -14,7 +14,7 @@
       <div id="wrapper">
 
          <p style="text-align: center;">
-            ID{{ idDay }}<br>
+            ID{{ id }}日付{{ day }}<br>
             入眠時間 {{ sleepHourStart }}時 {{ sleepMinStart }}分（24時間表記）<br>            
             起床時間 {{ sleepHourEnd }}時 {{ sleepMinEnd }}分（24時間表記）<br>
             {% set timeLeftMin = (timeLeft|float - timeLeft|int)*60 %}
@@ -23,16 +23,24 @@
 
          <form action="result" method="POST">
             <table align="center" border="1" >
+               繰り返し回数を入力してください{{form.numberTimes}}<br>
                睡眠時間を変更する場合は入力してください。<br>
-               {{ form.sleepingHour }}時間 {{ form.sleepingMin }}分
-            {% set sleepingMin = (sleepingLength|float - sleepingLength|int)*60 %}
+               入眠時間 {{ form.sleepHourStart }}時 {{ form.sleepMinStart }}分（24時間表記）<br>            
+               起床時間 {{ form.sleepHourEnd }}時 {{ form.sleepMinEnd }}分（24時間表記）<br>
+               {% set sleepingMin = (sleepingLength|float - sleepingLength|int)*60 %}
+               {% set goingoutMinPre = (goingoutLengthPre|float - goingoutLengthPre|int)*60 %}
+               {% set cookingMinPre = (cookingLengthPre|float - cookingLengthPre|int)*60 %}
+               {% set eatingMinPre = (eatingLengthPre|float - eatingLengthPre|int)*60 %}
+               {% set bathingMinPre = (bathingLengthPre|float - bathingLengthPre|int)*60 %}
+               {% set otherMinPre = (otherLengthPre|float - otherLengthPre|int)*60 %}
+
                <tr><th>行動の種類</th><th>過去の行動時間</th><th>今後の行動時間</th></tr>
                <tr><td>睡眠</td><td></td><td>{{ sleepingLength|int }}時間 {{ sleepingMin|int }}分 </td></tr>
-               <tr><td> 外出 </td><td></td><td>{{ form.goingoutHour }}時間 {{ form.goingoutMin }}分 </td></tr>
-               <tr><td> 料理 </td><td></td><td>{{ form.cookingHour }}時間 {{ form.cookingMin }}分 </td></tr>
-               <tr><td>食事</td><td></td><td>{{ form.eatingHour }}時間 {{ form.eatingMin }}分 </td></tr>
-               <tr><td>入浴</td><td></td><td>{{ form.bathingHour }}時間 {{ form.bathingMin }}分 </td></tr>
-               <tr><td>その他</td><td></td><td>{{ form.otherHour }}時間 {{ form.otherMin }}分 </td></tr>
+               <tr><td> 外出 </td><td>{{ goingoutLengthPre|int }}時間 {{ goingoutMinPre|int }}分</td><td>{{ form.goingoutHour }}時間 {{ form.goingoutMin }}分 </td></tr>
+               <tr><td> 料理 </td><td>{{ cookingLengthPre|int }}時間 {{ cookingMinPre|int }}分</td><td>{{ form.cookingHour }}時間 {{ form.cookingMin }}分 </td></tr>
+               <tr><td>食事</td><td>{{ eatingLengthPre|int }}時間 {{ eatingMinPre|int }}分</td><td>{{ form.eatingHour }}時間 {{ form.eatingMin }}分 </td></tr>
+               <tr><td>入浴</td><td>{{ bathingLengthPre|int }}時間 {{ bathingMinPre|int }}分</td><td>{{ form.bathingHour }}時間 {{ form.bathingMin }}分 </td></tr>
+               <tr><td>その他</td><td>{{ otherLengthPre|int }}時間 {{ otherMinPre|int }}分</td><td>{{ form.otherHour }}時間 {{ form.otherMin }}分 </td></tr>
                <tr><td></td><td colspan="2">この予定は</td></tr>
             </table>
             <br>
