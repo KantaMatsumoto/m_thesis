@@ -162,9 +162,9 @@ def getForm(sleepingLength, goingoutLength, cookingLength, eatingLength, bathing
     xTest= makeFeatures(timeCount)
     pred = predictStress(xTest)
     if pred==1:
-        if numberTimes == 2:
+        if numberTimes == 1:
             pred = 2
-        if numberTimes >= 3:
+        if numberTimes >= 2:
             pred = 3
     elif pred==2:
         if numberTimes >= 2:
